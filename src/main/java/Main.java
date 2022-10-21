@@ -20,6 +20,7 @@ public class Main {
         int number;
         Scanner scanner = new Scanner(System.in);
 
+
         /** 1.1 **/
 //        System.out.println("Задание 1. Введите целое число:");
 //        number = scanner.nextInt();
@@ -266,6 +267,13 @@ public class Main {
 
     }
 
+
+    public ArrayList<Double> readValues(String filename) throws IOException {
+        File f = new File("C:\\Users\\Strelets.A\\Desktop\\log4j3");
+        FileInputStream fileInputStream = new FileInputStream(f);
+        fileInputStream.read();
+        return null;
+    }
 
 
 
