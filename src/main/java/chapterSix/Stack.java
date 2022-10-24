@@ -9,6 +9,8 @@ public class Stack<E> {
 
     private ArrayList<E> arrayList;
 
+    public Stack(){};
+
     public Stack(ArrayList<E> arrayList){
         this.arrayList = arrayList;
     }
@@ -35,4 +37,8 @@ public class Stack<E> {
         return returnValue;
     }
 
+    @Override
+    public String toString() {
+        return this.getClass() + " Стек:" + arrayList;
+    }
 }

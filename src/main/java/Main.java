@@ -1,6 +1,8 @@
 import chapterFour.Rectangle;
+import chapterSix.Stack;
 import chapterTwo.Car;
 import chapterTwo.Invoice;
+import chapterTwo.RandomNumbers;
 import org.omg.CORBA.IntHolder;
 
 import javax.imageio.stream.ImageOutputStream;
@@ -11,11 +13,13 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         int number;
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +34,6 @@ public class Main {
 //        System.out.println("Двоичная система: " + s2 + "  Восьмеричная система: " + s8 + "  Шестнадцатеричная система: " + s16);
 //
         /** 1.2 **/
-//        //Scanner scanner2 = new Scanner(System.in);
 //        System.out.println("Задание 2. Введите значение угла:");
 //        number = scanner.nextInt();
 //        if (number < 0) {
@@ -41,7 +44,6 @@ public class Main {
 //            number = Math.floorMod(number, 360); // способ 2
 //        }
 //        System.out.println(number);
-//
         /** 1.3 **/
 //        System.out.println("Задание 3. Введите три числа:");
 //        int number1 = scanner.nextInt();
@@ -246,6 +248,74 @@ public class Main {
 //        System.out.println(Rectangle.class.getName());
 
 
+        /** 6.1 **/
+
+//        ArrayList<String> arrayList = new ArrayList<>();
+//        arrayList.add("Hello1");
+//        arrayList.add("Hello2");
+//        arrayList.add("Hello3");
+//        arrayList.add("Hello4");
+//        arrayList.add("Hello5");
+//        Stack<String> stringStack = new Stack<String>(arrayList);
+//        System.out.println(stringStack.isEmpty());
+//        System.out.println(stringStack.pop());
+//        stringStack.push("Hello0");
+//        System.out.println(stringStack);
+
+
+        /** 6.24 **/
+
+//        Class<?> aClass = null;
+//        aClass.toString();
+//        aClass.desiredAssertionStatus();
+//        aClass.getAnnotatedInterfaces();
+//        aClass.getAnnotations();
+//        aClass.getCanonicalName();
+//        aClass.getClasses();
+//        aClass.getClassLoader();
+//        aClass.getComponentType();
+//        aClass.getConstructors();
+//        aClass.getDeclaredAnnotations();
+//        aClass.getDeclaredClasses();
+//        aClass.getDeclaredFields();
+//        aClass.getDeclaredConstructors();
+//        aClass.getFields();
+//        aClass.getMethods();
+//        aClass.getModifiers();
+
+        /** 7.2 **/
+
+//        Сделайте все буквы прописными в символьных строках, содержащихся в массиве.
+//        С этой целью воспользуйтесь сначала итератором, затем перебором индексных
+//        значений в цикле и, наконец, методом replaceAll ().
+
+
+//        List<String> listString = new ArrayList<>();
+//        System.out.println("Задание 7.2. Введите строку");
+//        //Это просто для ввода нескольких строк, можно было вообще их в коде задать
+//        for(int i = 0; i<3; i++) {
+//            listString.add(scanner.next());
+//        }
+
+//        // Метод 1
+//        ListIterator<String> iterator = listString.listIterator();
+//        while (iterator.hasNext()){
+//            iterator.set(iterator.next().toUpperCase());
+//        }
+
+//        // Метод 2
+//        for(int i = 0; i<listString.size(); i++){
+//            String s = listString.get(i);
+//            listString.set(i, s.replace(s, s.toUpperCase()));
+//        }
+
+//        // Метод 3
+//        listString.replaceAll(String::toUpperCase);
+
+
+//        //Вывод результата
+//        System.out.println(listString);
+
 
         /** 7.3 **/
 //        Как вычислить объединение, пересечение и разность двух множеств, используя
@@ -265,19 +335,60 @@ public class Main {
 //        итератором, он может сгенерировать исключение типа ConcurrentModificationException
 
 
+        /** 7.7 **/
+//    Напишите программу для чтения всех слов из файла и вывода частоты,
+//    с которой каждое слово встречается в нем. Воспользуйтесь для этой
+//    цели классом TreeMap<String, Integer>
+
+        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+        Map<String, Integer> uniqueStringsOfFile = new TreeMap<>();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while(scanner1.hasNext())
+        {
+            int count = 0;
+            String s = scanner1.next();
+            if (!uniqueStringsOfFile.containsKey(s)) {
+                while(scanner2.hasNext()) {
+                    String s2 = scanner2.next();
+                    if(s2.equals(s)){
+                        count++;
+                    }
+                }
+            }
+            uniqueStringsOfFile.put(s, count);
+        }
+        System.out.println(uniqueStringsOfFile);
+    }
+
+        /** 7.5 **/
+////        Реализуйте метод public static void swap(List<?> list, int i, int j),
+////        выполняющий перестановку элементов обычным образом, когда класс,
+////        определяющий тип параметра list, реализует интерфейс RandomAccess, а иначе
+////        сводящий к минимуму обход элементов на позициях, обозначаемых индексами i и j.
+//
+//    public static void swap(List<?> list, int i, int j) {
+//        if (list instanceof RandomAccess) {
+//            Collections.swap(list, i, j);
+//        } else {
+//            ListIterator<?> listIterator = list.listIterator();
+//
+//        }
+
+
     }
 
 
-    public ArrayList<Double> readValues(String filename) throws IOException {
-        File f = new File("C:\\Users\\Strelets.A\\Desktop\\log4j3");
-        FileInputStream fileInputStream = new FileInputStream(f);
-        fileInputStream.read();
-        return null;
-    }
 
 
 
 
 
-}
+
+
+
+
+
+
 
