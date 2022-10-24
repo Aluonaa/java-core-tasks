@@ -340,26 +340,77 @@ public class Main {
 //    с которой каждое слово встречается в нем. Воспользуйтесь для этой
 //    цели классом TreeMap<String, Integer>
 
-        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-        Map<String, Integer> uniqueStringsOfFile = new TreeMap<>();
-        StringBuilder stringBuilder = new StringBuilder();
+//        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+//        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+//        Map<String, Integer> uniqueStringsOfFile = new TreeMap<>();
+//        StringBuilder stringBuilder = new StringBuilder();
+//
+//        while(scanner1.hasNext())
+//        {
+//            int count = 0;
+//            String s = scanner1.next();
+//            if (!uniqueStringsOfFile.containsKey(s)) {
+//                while(scanner2.hasNext()) {
+//                    String s2 = scanner2.next();
+//                    if(s2.equals(s)){
+//                        count++;
+//                    }
+//                }
+//            }
+//            uniqueStringsOfFile.put(s, count);
+//        }
+//        System.out.println(uniqueStringsOfFile);
 
+        /** 7.8 **/
+
+////        Напишите программу для чтения всех слов из файла и вывода строк,
+////        в которых каждое слово встречается в нем. Воспользуйтесь для этой
+////        цели преобразованием из символьных срок в множества
+//
+//        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+//        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+//        Set<String> uniqueStringsOfFile = new HashSet<>();
+//
+//        while(scanner1.hasNext())
+//        {
+//            String s = scanner1.next();
+//            if (!uniqueStringsOfFile.contains(s)) {
+//               uniqueStringsOfFile.add(s);
+//            }
+//        }
+//        while (scanner2.hasNext()){
+//            String s = scanner2.nextLine();
+//            boolean containsAllWords = true;
+//            for(String b: uniqueStringsOfFile) {
+//                if (!s.contains(b)){
+//                    containsAllWords = false;
+//                    break;
+//                }
+//            }
+//            if(containsAllWords == true){
+//                System.out.println(s);
+//            }
+//        }
+
+        /** 7.11 **/
+
+//        Напишите программу для чтения предложения в списочный массив.
+//        Затем перетасуйте в массиве все слова, кроме первого и последнего,
+//        используя метод Collections. shuffle(), но не копируя слова в другую коллекцию.
+
+        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+        List<String> stringList = new ArrayList<>();
         while(scanner1.hasNext())
         {
-            int count = 0;
             String s = scanner1.next();
-            if (!uniqueStringsOfFile.containsKey(s)) {
-                while(scanner2.hasNext()) {
-                    String s2 = scanner2.next();
-                    if(s2.equals(s)){
-                        count++;
-                    }
-                }
-            }
-            uniqueStringsOfFile.put(s, count);
+            stringList.add(s);
         }
-        System.out.println(uniqueStringsOfFile);
+        Collections.shuffle(stringList.subList(1, stringList.size()-1));
+        System.out.println(stringList);
+
+
+
+
     }
 
         /** 7.5 **/
