@@ -1,6 +1,4 @@
-package chapterTwo;
-
-import java.util.Scanner;
+package chapter2;
 
 import static java.lang.System.out;
 
@@ -24,8 +22,7 @@ public class Car {
     }
 
     public void ride(int kilometers) {
-        Scanner scanner = new Scanner(System.in);
-        if(fuelСonsumption * kilometers > fuelTank) {
+        if(fuelСonsumption * kilometers > fuelTank) { // проверка на то, хватит ли бензина на необходимый путь
             distance += fuelTank / fuelСonsumption;
             fuelTank = 0;
             out.println("Для дальнейшей поездки ваше корыто необходимо заправить");

@@ -1,4 +1,4 @@
-package chapterFour;
+package chapter4;
 
 /** 4.4 **/
 /** 4.5 **/
@@ -27,5 +27,6 @@ public abstract class Shape {
     }
 
     public abstract Point getCenter();
+
 }
 

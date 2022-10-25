@@ -1,4 +1,4 @@
-package chapterFour;
+package chapter4;
 
 /** 4.4 **/
 /** 4.5 **/
@@ -19,11 +19,18 @@ public class Line extends Shape implements Cloneable {
     }
 
     @Override
-    protected Object clone(){
+    protected Line clone(){
         Line clone = new Line();
         Point point = new Point(this.getPoint().getX(), this.getPoint().getY());
         clone.to = this.to;
         clone.setPoint(point);
         return clone;
+    }
+
+    @Override
+    public String toString() {
+        return "Line{" +
+                "to=" + to +
+                '}';
     }
 }

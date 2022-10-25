@@ -1,4 +1,4 @@
-package chapterFour;
+package chapter4;
 
 /** 4.4 **/
 /** 4.5 **/
@@ -21,12 +21,20 @@ public class Rectangle extends Shape{
     }
 
     @Override
-    protected Object clone(){
+    protected Rectangle clone(){
         Rectangle clone = new Rectangle();
         Point point = new Point(this.getPoint().getX(), this.getPoint().getY());
         clone.width = this.width;
         clone.height = this.height;
         clone.setPoint(point);
         return clone;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "width=" + width +
+                ", height=" + height +
+                '}';
     }
 }

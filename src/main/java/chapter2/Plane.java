@@ -1,4 +1,4 @@
-package chapterTwo;
+package chapter2;
 
 public class Plane {
 
@@ -36,6 +36,14 @@ public class Plane {
             x = x * s;
             y = y * s;
         }
-    }
+
+        @Override
+        public String toString() {
+            return "Point{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    '}';
+        }
+}
 
 }

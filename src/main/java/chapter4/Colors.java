@@ -1,4 +1,4 @@
-package chapterFour;
+package chapter4;
 
 /** 4.7 **/
 

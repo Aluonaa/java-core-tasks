@@ -1,4 +1,4 @@
-package chapterFour;
+package chapter4;
 
 /** 4.4 **/
 /** 4.5 **/
@@ -21,11 +21,18 @@ public class Circle extends Shape implements Cloneable{
 
 
     @Override
-    public Object clone(){
+    public Circle clone(){
         Circle cloned = new Circle();
         Point point = new Point(this.getCenter().getX(), this.getCenter().getY());
         cloned.radius = this.radius;
         cloned.setPoint(point);
         return cloned;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
     }
 }
