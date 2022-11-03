@@ -13,23 +13,23 @@ public class Car {
     /** 2.11 **/
     private int distance; // Расстояние
     private int fuelTank; // Топливный бак
-    private int fuelСonsumption; //Потребление топлива
+    private int fuelConsumption; //Потребление топлива
 
-    public Car(int fuelСonsumption) {
-        this.fuelСonsumption = fuelСonsumption;
+    public Car(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
         fuelTank = 0;
         distance = 0;
     }
 
     public void ride(int kilometers) {
-        if(fuelСonsumption * kilometers > fuelTank) { // проверка на то, хватит ли бензина на необходимый путь
-            distance += fuelTank / fuelСonsumption;
+        if(fuelConsumption * kilometers > fuelTank) { // проверка на то, хватит ли бензина на необходимый путь
+            distance += fuelTank / fuelConsumption;
             fuelTank = 0;
             out.println("Для дальнейшей поездки ваше корыто необходимо заправить");
         }
         else {
             distance += kilometers;
-            fuelTank = fuelTank - fuelСonsumption * kilometers;
+            fuelTank = fuelTank - fuelConsumption * kilometers;
             /**Из-за статического импорта System теперь можно не указывать**/
             out.println("Поздравляю, вы доехали!");
         }
@@ -52,7 +52,7 @@ public class Car {
         return "Car{" +
                 "distance=" + distance +
                 ", fuelTank=" + fuelTank +
-                ", fuelСonsumption=" + fuelСonsumption +
+                ", fuelСonsumption=" + fuelConsumption +
                 '}';
         }
     }

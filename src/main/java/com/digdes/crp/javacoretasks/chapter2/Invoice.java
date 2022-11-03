@@ -76,7 +76,7 @@ public class Invoice {
         @Override
         public String toString(){
             return "Item{" +
-                    "description=" + description +
+                    description +
                     ", quantity=" + quantity +
                     ", unitPrice=" + unitPrice +
                     '}';
