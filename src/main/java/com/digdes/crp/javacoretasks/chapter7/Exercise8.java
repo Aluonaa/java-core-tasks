@@ -2,34 +2,37 @@ package com.digdes.crp.javacoretasks.chapter7;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class Exercise8 {
-    public static void main(String[] args) throws IOException {
-        Scanner scanner3 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-        Scanner scanner4 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-        Set<String> uniqueStringsOfFile2 = new HashSet<>();
+    /** Напишите программу для чтения всех слов из файла и вывода строк,
+    в которых каждое слово встречается в нем. Воспользуйтесь для
+    этой цели преобразованием из символьных срок в множества. **/
 
-        while(scanner3.hasNext())
+    public static void main(String[] args) throws IOException {
+        Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
+        Set<String> uniqueStringsOfFile = new HashSet<>();
+
+        while(scanner1.hasNext())
         {
-            String s = scanner3.next();
-            if (!uniqueStringsOfFile2.contains(s)) {
-                uniqueStringsOfFile2.add(s);
-            }
+            String currentLine = scanner1.nextLine();
+            String[] massOfWords = currentLine.split(" ");
+            uniqueStringsOfFile.addAll(Arrays.asList(massOfWords));
         }
-        while (scanner4.hasNext()){
-            String s = scanner4.nextLine();
-            boolean containsAllWords = true;
-            for(String b: uniqueStringsOfFile2) {
-                if (!s.contains(b)){
-                    containsAllWords = false;
-                    break;
-                }
-            }
-            if(containsAllWords == true){
-                System.out.println(s);
+
+        System.out.println(uniqueStringsOfFile);
+
+        while(scanner2.hasNext())
+        {
+            String currentLine = scanner2.nextLine();
+            String[] massOfWords = currentLine.split(" ");
+            if(Arrays.asList(massOfWords).containsAll(uniqueStringsOfFile)){
+                System.out.println(currentLine);
             }
         }
     }

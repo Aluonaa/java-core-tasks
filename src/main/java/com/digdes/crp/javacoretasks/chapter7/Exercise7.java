@@ -8,6 +8,9 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Exercise7 {
+    /** Напишите программу для чтения всех слов из файла и вывода частоты,
+    с которой каждое слово встречается в нем. Воспользуйтесь для этой цели классом
+    TreeMap<String, Integer> **/
     public static void main(String[] args) throws IOException {
         Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
         Map<String, Integer> uniqueStringsOfFile = new TreeMap<>();
@@ -15,16 +18,16 @@ public class Exercise7 {
         while(scanner1.hasNext())
         {
             int count = 0;
-            String s = scanner1.next();
+            String currentWord = scanner1.next();
             Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-            if (!uniqueStringsOfFile.containsKey(s)) {
+            if (!uniqueStringsOfFile.containsKey(currentWord)) {
                 while(scanner2.hasNext()) {
                     String s2 = scanner2.next();
-                    if(s2.equals(s)){
+                    if(s2.equals(currentWord)){
                         count++;
                     }
                 }
-                uniqueStringsOfFile.put(s, count);
+                uniqueStringsOfFile.put(currentWord, count);
             }
         }
         System.out.println(uniqueStringsOfFile);
