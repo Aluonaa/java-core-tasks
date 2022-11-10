@@ -3,6 +3,9 @@ package com.digdes.crp.javacoretasks.chapter1;
 import java.util.Scanner;
 
 public class Exercise7 {
+    /**Напишите программу, вводящую два числа в пределах от 0 до 65535,
+    сохраняющую их в переменных типа short и вычисляющую их сумму,
+    разность, произведение, частное и остаток без знака, не преобразуя эти величины в тип int **/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите числа short: ");

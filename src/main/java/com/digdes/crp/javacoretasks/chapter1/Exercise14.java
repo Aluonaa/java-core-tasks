@@ -109,7 +109,6 @@ public class Exercise14 {
             return false;
         }
 
-
         return true;
     }
 }

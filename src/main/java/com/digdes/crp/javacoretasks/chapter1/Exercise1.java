@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Exercise1 {
 
+    /**Напишите программу, вводящую целочисленное значение и выводящую его
+    в двоичной, восьмеричной и шестнадцатеричной форме. Организуйте вывод
+    обратного значения в виде шестнадцатеричного числа с плавающей точкой **/
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

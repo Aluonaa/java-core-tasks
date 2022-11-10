@@ -3,6 +3,10 @@ package com.digdes.crp.javacoretasks.chapter1;
 import java.util.Scanner;
 
 public class Exercise3 {
+    /** Напишите программу, вводящую три целочисленных значения и выводящую
+    самое большое из них, используя только условную операцию. Сделайте то же
+    самое с помощью метода Math.mах() **/
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number;

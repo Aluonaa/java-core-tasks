@@ -3,6 +3,10 @@ package com.digdes.crp.javacoretasks.chapter1;
 import java.util.Scanner;
 
 public class Exercise2 {
+    /** Напишите программу, вводящую целочисленное (как положительное, так и
+    отрицательное) значение угла и нормализующую его в пределах от 0 до 359
+    градусов. Попробуйте сделать это сначала с помощью операции %, а затем метода floorMod(). **/
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number;

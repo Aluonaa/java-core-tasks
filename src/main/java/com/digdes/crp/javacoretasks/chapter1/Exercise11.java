@@ -4,6 +4,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Exercise11 {
+    /**Напишите программу, вводящую текстовую строку и выводящую все символы,
+    не представленные в коде ASCII, вместе с их значениями в Юникоде **/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String lookingForCharsOutOfASCII = scanner.nextLine();
