@@ -1,8 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter3;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Employee implements Measurable{
 
