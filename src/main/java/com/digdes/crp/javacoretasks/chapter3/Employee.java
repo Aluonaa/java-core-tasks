@@ -31,6 +31,7 @@ public class Employee implements Measurable{
         for(Measurable object: objects){
             averageSalary += object.getMeasure();
         }
+        averageSalary = averageSalary / objects.length;
         return averageSalary;
     }
 
