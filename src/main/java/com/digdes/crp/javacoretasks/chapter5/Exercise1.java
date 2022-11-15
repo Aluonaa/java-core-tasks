@@ -13,21 +13,21 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         String filename = "C:\\Users\\Strelets.A\\Desktop\\qq.txt";
-        System.out.println(readValues(filename).toString());
+        try {
+            System.out.println(readValues(filename).toString());
+        }
+        catch (IOException | NumberFormatException exception){
+            exception.printStackTrace();
+
+        }
     }
 
-    public static ArrayList<Double> readValues(String filename){
+    public static ArrayList<Double> readValues(String filename) throws IOException, NumberFormatException{
         ArrayList<Double> listDouble = new ArrayList<>();
         try(Scanner scanner = new Scanner(Paths.get(filename))){
             while(scanner.hasNext()){
                 listDouble.add(Double.parseDouble(scanner.next()));
             }
-        } catch (IOException fileNotFoundException){
-            System.out.println("Файл не найден");
-
-        } catch (NumberFormatException  numberFormatException){
-            System.out.println("Не удалось преобразовать в число. " +
-                    "Методу был передан недопустимый или неуместный аргумент из файла, разрешен только double");
         }
         return listDouble;
     }
