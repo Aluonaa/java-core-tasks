@@ -22,7 +22,7 @@ public class Exercise14 {
         employeeList.add(employee3);
         employeeList.add(employee4);
         employeeList.add(employee5);
-        Collections.sort(employeeList, Comparator.comparing(Employee::getSalary).thenComparing(Employee::getName));
+        employeeList.sort(Comparator.comparing(Employee::getSalary).thenComparing(Employee::getName));
         for(Employee emp: employeeList){
             System.out.println(emp.getName());
         }

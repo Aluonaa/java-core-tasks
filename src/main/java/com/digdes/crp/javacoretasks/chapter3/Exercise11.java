@@ -13,11 +13,11 @@ public class Exercise11 {
 
     public static void main(String[] args) {
         System.out.println("*.tmp в директории " + DIRECTORY);
-        System.out.print(Arrays.toString(withExtension(".tmp")));
+        System.out.print(Arrays.toString(withExtension()));
     }
 
-    private static String[] withExtension(String extension) {
-        return new File(Exercise11.DIRECTORY).list((directory, name) -> name.endsWith(extension));
+    private static String[] withExtension() {
+        return new File(Exercise11.DIRECTORY).list((directory, name) -> name.endsWith(".tmp"));
     }
 }
 
