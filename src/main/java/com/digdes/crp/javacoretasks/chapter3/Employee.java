@@ -1,7 +1,9 @@
 package com.digdes.crp.javacoretasks.chapter3;
 
 
-public class Employee implements Measurable{
+import java.io.Serializable;
+
+public class Employee implements Measurable, Serializable {
 
     String name;
     double salary;

@@ -21,6 +21,8 @@ public class Exercise4 {
         try(Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
 
             //BufferedReader это обертка для FileReader, которая добавляет механизм буферизации, работают быстрее, чем Scanner
+            //Уменьшает количество обращений к файлу в сравнении с FileReader, что является ресурсоемкой операцией.
+            // Для BufferedWriter также.
             BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
             BufferedReader readerWithLines = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));){
 

@@ -43,7 +43,6 @@ public class Exercise2 {
             io.printStackTrace();
         }
 
-
         try(FileWriter fileWriter = new FileWriter("C:\\Users\\Strelets.A\\Desktop\\out.toe")) {
             for (String s : uniqueStringsOfFile) {
                 fileWriter.write(s);
