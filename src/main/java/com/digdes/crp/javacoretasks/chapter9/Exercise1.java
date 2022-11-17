@@ -15,6 +15,7 @@ public class Exercise1 {
     public static void main(String[] args) throws IOException {
         String inFile = "C:\\Users\\Strelets.A\\Desktop\\qq.txt";
         String outFile = "C:\\Users\\Strelets.A\\Desktop\\9.1.txt";
+        InputStream in = Files.newInputStream(Paths.get(outFile));
         OutputStream out = Files.newOutputStream(Paths.get(outFile));
         out.write(Files.readAllBytes(Paths.get(inFile)));
 

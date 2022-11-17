@@ -18,36 +18,43 @@ public class Exercise4 {
     и удобнее всего? **/
 
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
-        int i = 0;
-        long startCountWithScanner = System.currentTimeMillis();
-        String lineScanner;
-        while(scanner.hasNext())
-        {
-            lineScanner = scanner.nextLine();
-            i++;
+        try(Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
+
+            //BufferedReader это обертка для FileReader, которая добавляет механизм буферизации, работают быстрее, чем Scanner
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
+            BufferedReader readerWithLines = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));){
+
+            // Метод Scanner
+            int i = 0;
+            long startCountWithScanner = System.currentTimeMillis();
+            String lineScanner;
+            while(scanner.hasNext())
+            {
+                lineScanner = scanner.nextLine();
+                i++;
+            }
+            long endCountWithScanner = System.currentTimeMillis();
+
+            // Метод BufferedReader
+            String lineBufferedReader;
+            i = 0;
+            long startCountWithBufferedReader = System.currentTimeMillis();
+            while ((lineBufferedReader = reader.readLine()) != null) {
+                i++;
+            }
+            long endCountWithBufferedReader = System.currentTimeMillis();
+
+            // Метод BufferedReader with lines
+            i = 0;
+            long startCountWithBufferedReaderLines = System.currentTimeMillis();
+            Stream<String> linesBufferedReaderWithLines = readerWithLines.lines();
+            long endCountWithBufferedReaderLines = System.currentTimeMillis();
+
+            System.out.println(endCountWithScanner-startCountWithScanner);
+            System.out.println(endCountWithBufferedReader-startCountWithBufferedReader);
+            System.out.println(endCountWithBufferedReaderLines-startCountWithBufferedReaderLines);
         }
-        long endCountWithScanner = System.currentTimeMillis();
 
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
-        String lineBufferedReader;
-        i = 0;
-        long startCountWithBufferedReader = System.currentTimeMillis();
-        while ((lineBufferedReader = reader.readLine()) != null) {
-            i++;
-        }
-        long endCountWithBufferedReader = System.currentTimeMillis();
-
-        i = 0;
-        long startCountWithBufferedReaderLines = System.currentTimeMillis();
-        BufferedReader readerWithLines = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
-        Stream<String> linesBufferedReaderWithLines = readerWithLines.lines();
-        long endCountWithBufferedReaderLines = System.currentTimeMillis();
-
-
-        System.out.println(endCountWithScanner-startCountWithScanner);
-        System.out.println(endCountWithBufferedReader-startCountWithBufferedReader);
-        System.out.println(endCountWithBufferedReaderLines-startCountWithBufferedReaderLines);
 
     }
 }
