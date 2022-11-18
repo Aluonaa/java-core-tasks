@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 public class Employee implements Measurable, Serializable {
 
+    static final long SerialVersionUID = 1;
     String name;
     double salary;
     public Employee(String name, double salary){

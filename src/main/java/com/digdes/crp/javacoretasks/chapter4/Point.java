@@ -7,11 +7,11 @@ import java.util.Objects;
 
 /** 4.3 **/
 
-public class Point{
+    class Point{
     protected double x;
     protected double y;
 
-    Point(double х, double у){
+    public Point(double x, double y){
         this.x = x;
         this.y = y;
     }
