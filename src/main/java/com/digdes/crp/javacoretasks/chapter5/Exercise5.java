@@ -2,11 +2,11 @@ package com.digdes.crp.javacoretasks.chapter5;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Exercise5 {
+
     /** Реализуйте метод, содержащий код, где применяются классы Scanner и
     PrintWriter (см. раздел 5.1.5). Но вместо оператора try с ресурсами воспользуйтесь
     оператором catch. Непременно закройте оба объекта, при условии, что они

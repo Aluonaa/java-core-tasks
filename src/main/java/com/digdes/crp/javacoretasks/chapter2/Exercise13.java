@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.util.Arrays;
 
 public class Exercise13 {
-    /**Загрузите архивный ]AR-файл с библиотекой OpenCSV по адресу h t t p : / /
+    /**Загрузите архивный JAR-файл с библиотекой OpenCSV по адресу h t t p : / /
     o p e n c s v . s o u r c e f o r g e . n e t . Напишите класс с методом main()
     для чтения избранных файлов формата CSV и вывода некоторого их содержимого.
     Соответствующий образец кода можно найти на веб-сайте библиотеки OpenCSV по

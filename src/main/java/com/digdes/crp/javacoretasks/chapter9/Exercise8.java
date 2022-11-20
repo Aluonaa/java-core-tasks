@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -31,6 +33,10 @@ public class Exercise8 {
             fileNotFoundException.printStackTrace();
         }
 
+        List<String> list = new ArrayList<>();
+        list.add("Hello");
+        ArrayList<String> arrayList = new ArrayList<>();
+        list.add("Hello");
 
     }
 

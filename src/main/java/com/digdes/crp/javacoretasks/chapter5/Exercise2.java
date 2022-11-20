@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Exercise2 {
+
    /** Напишите метод public double sumOfValues (String filename) throws...,
     *  вызывающий метод из предыдущего упражнения и возвращающий сумму значений в файле.
     *  Организуйте распространение любых исключений вызывающему коду **/

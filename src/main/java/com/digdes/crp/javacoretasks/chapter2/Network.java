@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Network {
 
-    public class Member { // Класс Member является внутренним
-        // для класса Network
+    public class Member {
+
         private String name;
 
         public Member(String name) {

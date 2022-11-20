@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Exercise8 {
+    /** В классе C l a s s имеются шесть методов, возвращающих строковое представление типа,
+    описываемого объектом типа Class. Чем отличается их применение
+    к массивам, обобщенным типам, внутренним классам и примитивным типам? **/
     public static void main(String[] args){
         System.out.println(void.class.getName());
         System.out.println(int.class.getName());

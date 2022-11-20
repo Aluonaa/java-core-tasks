@@ -1,6 +1,10 @@
 package com.digdes.crp.javacoretasks.chapter4;
 
 public class Exercise1 {
+    /** Определите класс Point с конструктором Point(double х, doubleу) и методами
+    доступа getX(), getY(). Определите также подкласс LabeledPoint с конструктором
+    LabeledPoint(String label , double x , double y) и методом
+    доступа getLabel(). **/
     public static void main(String[] args){
         Point point = new Point(3, 8);
         Point point1 = new Point(3, 8);

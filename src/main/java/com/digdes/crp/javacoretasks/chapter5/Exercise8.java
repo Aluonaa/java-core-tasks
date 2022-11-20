@@ -3,6 +3,7 @@ package com.digdes.crp.javacoretasks.chapter5;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Exercise8 {
+
     /** Разработайте вспомогательный метод, чтобы воспользоваться классом
     ReentrantLock в операторе try с ресурсами. Вызовите метод lоск()
     и возвратите объект класса, который реализует интерфейс AutoCloseable и в методе
@@ -11,7 +12,6 @@ public class Exercise8 {
     public static void main(String[] args) {
         try (ClosableClass lock = getLock()) {
         }
-
     }
 
     private static ClosableClass getLock() {
@@ -32,8 +32,7 @@ public class Exercise8 {
             try {
                 lock.unlock();
                 System.out.println("unlock");
-            } catch (Exception e) {
-
+            } catch (Exception ignored) {
             }
         }
 

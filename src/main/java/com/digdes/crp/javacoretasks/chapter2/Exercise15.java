@@ -5,6 +5,7 @@ public class Exercise15 {
      /** 15. Реализуйте полностью класс Invoice, представленный в разделе 2.6.1.
              Предоставьте метод, выводящий счет-фактуру, и демонстрационную версию программы,
              составляющей и выводящей образец счета-фактуры.  **/
+
     public static void main(String[] args){
         Invoice invoice = new Invoice();
         Invoice.Item newltem1 = new Invoice. Item ("Тостер", 2, 1900);

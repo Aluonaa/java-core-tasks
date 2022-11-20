@@ -1,6 +1,13 @@
 package com.digdes.crp.javacoretasks.chapter4;
 
 public class Exercise4 {
+    /** Определите абстрактный класс Shape с переменной экземпляра класса Point ;
+    конструктором и конкретным методом public void moveBy(double d x, double dy), перемещающим
+    точку на заданное расстояние; а также абстрактным классом public Point getCenter(). Предоставьте конкретные подклассы Circle,
+    Rectangle , Line с конструкторами public Circle(Point center, double
+    radius), public Rectangle(Point topLeft, double width, double height) и
+    public Line(Point from, Point to) **/
+
     public static void main(String[] args){
 
         Point pointForShapes = new Point(1, 1);

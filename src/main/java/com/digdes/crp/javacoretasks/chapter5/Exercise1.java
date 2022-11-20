@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise1 {
+
     /** Напишите метод public ArrayList<Double> readValues(String filename)
     throws..., читающий числа с плавающей точкой из файла. Сгенерируйте
     подходящие исключения, если файл не удается открыть или же если введены

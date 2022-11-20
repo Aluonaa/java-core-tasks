@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise4 {
+
     /** Повторите предыдущее упражнение, но на этот раз не пользуйтесь
     исключениями. Вместо этого организуйте возврат кодов ошибок из
     методов readValues() и sumOfValues(). **/
