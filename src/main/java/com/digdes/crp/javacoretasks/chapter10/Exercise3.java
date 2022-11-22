@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter10;
 
-import com.digdes.crp.javacoretasks.chapter6.Exercise5;
 
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -9,9 +8,9 @@ import java.util.concurrent.*;
 public class Exercise3 {
     /** Реализуйте метод, возвращающий задачу для чтения всех слов из файла
      *  с целью найти в нем заданное слово. Если задача прерывается,
-     *  она должна быть завершена немедленно с выдачей отладочного сообщения.
-     *  Запланируйте выполнение этой задачи для каждого файла в каталоге.
-     *  Как только одна из задач завершится успешно, все остальные задачи
+     *  она должна быть завершена немедленно с выдачей отладочного сообщения.
+     *  Запланируйте выполнение этой задачи для каждого файла в каталоге.
+     *  Как только одна из задач завершится успешно, все остальные задачи
      *  должны быть немедленно прерваны. **/
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
