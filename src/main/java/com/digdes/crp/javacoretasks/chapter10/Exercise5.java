@@ -26,22 +26,19 @@ public class Exercise5 {
 
             ConcurrentHashMap<Path, String> concurrentHashMap = new ConcurrentHashMap<>();
 
-             task = () -> {
-                for (Path p : pathList) {
-                    try {
-                        try (Scanner scanner = new Scanner(p)) {
-                            while (scanner.hasNext()) {
-                                if (scanner.next().equals(word)) {
-                                    concurrentHashMap.putIfAbsent(p, word);
-                                }
-                            }
-                        }
-                    } catch (IOException ioException) {
-                        ioException.printStackTrace();
+
+        task = () -> {pathList.forEach(path -> {
+            try (Scanner scanner = new Scanner(path)) {
+                while (scanner.hasNext()) {
+                    if (scanner.next().equals(word)) {
+                        concurrentHashMap.putIfAbsent(path, word);
                     }
                 }
-                return concurrentHashMap;
-            };
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+            return concurrentHashMap;};
 
         Future<ConcurrentHashMap<Path, String>> future = exec.submit(task);
         exec.shutdown();
