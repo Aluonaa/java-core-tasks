@@ -3,7 +3,7 @@ package com.digdes.crp.javacoretasks.chapter3;
 
 import java.io.Serializable;
 
-public class Employee implements Measurable, Serializable {
+public class Employee implements Measurable, Serializable{
 
     static final long SerialVersionUID = 1;
     String name;
