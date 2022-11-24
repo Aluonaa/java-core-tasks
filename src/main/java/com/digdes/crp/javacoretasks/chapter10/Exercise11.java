@@ -30,7 +30,6 @@ public class Exercise11 {
                             String currentWord = scanner1.next();
                             currentWord = currentWord.replaceAll("[^A-Za-zА-Яа-я]", "");
                             if(wordsWithFrequencyOfUse.containsKey(currentWord)){
-                                //System.out.println(currentWord);
                                 wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
                             }
                             else {
@@ -72,7 +71,7 @@ public class Exercise11 {
 
 
         for(int i = 2; i<=11; i++) {
-            System.out.println(String.valueOf(sortedMap.entrySet().toArray()[sortedMap.size() - i]));
+            System.out.println(sortedMap.entrySet().toArray()[sortedMap.size() - i]);
         }
 
     }
