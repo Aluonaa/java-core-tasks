@@ -1,7 +1,6 @@
 package com.digdes.crp.javacoretasks.chapter9;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class Exercise8 {
 
     public static void main(String[] args) {
         File[] files = new File(DIR).listFiles();
-        File f = new File("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\Files.zip");
+        File f = new File("src/main/resources/textFiles/Files.zip");
         try(ZipOutputStream out = new ZipOutputStream(new FileOutputStream(f))) {
             ZipEntry e = new ZipEntry("info.txt");
             out.putNextEntry(e);

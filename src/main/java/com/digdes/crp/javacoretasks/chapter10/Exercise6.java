@@ -11,11 +11,11 @@ import java.util.concurrent.*;
 public class Exercise6 {
     /** Повторите предыдущее упражнение, но на этот раз воспользуйтесь методом
     computeIfAbsent(). В чем преимущество такого подхода? **/
-    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         String word = "граница";
-        Path pathToRoot1 = Paths.get("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\10.5\\10.5.1.txt");
-        Path pathToRoot2 = Paths.get("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\10.5\\10.5.2.txt");
-        Path pathToRoot3 = Paths.get("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\10.5\\10.5.3.txt");
+        Path pathToRoot1 = Paths.get("src/main/resources/textFiles/10.5/10.5.1.txt");
+        Path pathToRoot2 = Paths.get("src/main/resources/textFiles/10.5/10.5.2.txt");
+        Path pathToRoot3 = Paths.get("src/main/resources/textFiles/10.5/10.5.3.txt");
         List<Path> pathList = new ArrayList<>();
         pathList.add(pathToRoot1);
         pathList.add(pathToRoot2);
@@ -24,7 +24,6 @@ public class Exercise6 {
         Callable<ConcurrentHashMap<Path, String>> task;
 
         ConcurrentHashMap<Path, String> concurrentHashMap = new ConcurrentHashMap<>();
-
 
 
         task = () -> {pathList.forEach(path -> {

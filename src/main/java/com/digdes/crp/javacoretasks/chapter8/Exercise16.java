@@ -14,7 +14,7 @@ public class Exercise16 {
     public static void main(String[] args) throws IOException {
 
         String content = new String(Files.readAllBytes(Paths.get(
-                "C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt")), StandardCharsets.UTF_8);
+                "src/main/resources/textFiles/voyna-i-mir-tom-1.txt")), StandardCharsets.UTF_8);
 
         List<String> listOfWords = Arrays.asList(content.split("\\PL+"));
 

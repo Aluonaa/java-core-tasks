@@ -19,7 +19,7 @@ public class Exercise10 {
     public static void main(String[] args) {
         //Один поток исполнения
         Runnable runnableForOneThread = () -> {
-            final File folder = new File("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\10.10");
+            final File folder = new File("src/main/resources/textFiles/10.10");
             ConcurrentLinkedDeque<File> concurrentLinkedDeque = new ConcurrentLinkedDeque<>();
             for (final File fileEntry : folder.listFiles()) {
                 if (fileEntry.isDirectory()) {
@@ -37,7 +37,7 @@ public class Exercise10 {
 
 
         Runnable runnableForMultipleThreads = () -> {
-            final File folder = new File("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\10.10");
+            final File folder = new File("src/main/resources/textFiles/10.10");
             ConcurrentLinkedDeque<File> concurrentLinkedDeque = new ConcurrentLinkedDeque<>();
             String word = "Hello";
             for (final File fileEntry : folder.listFiles()) {
@@ -63,7 +63,6 @@ public class Exercise10 {
                 concurrentLinkedDeque.pollFirst();
             }
          };
-
 
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         executorService.execute(runnableForMultipleThreads);

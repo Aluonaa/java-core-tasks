@@ -18,7 +18,7 @@ public class Exercise3 {
         ExecutorService exec = Executors.newCachedThreadPool();
         Callable<String> task = () -> {
             String word = null;
-            try(Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"))) {
+            try(Scanner scanner = new Scanner(Paths.get("src/main/resources/textFiles/voyna-i-mir-tom-1.txt"))) {
                 while (scanner.hasNext()) {
                     while (word == null) {
                         if (Thread.currentThread().isInterrupted()) return null;

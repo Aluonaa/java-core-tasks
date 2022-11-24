@@ -15,7 +15,7 @@ public class Exercise8 {
 
 //    public static void main(String[] args) throws IOException {
 //        String content = new String(Files.readAllBytes(Paths.get(
-//                "C:\\Users\\Strelets.A\\Desktop\\qwe2.txt")), StandardCharsets.UTF_8);
+//                "src/main/resources/textFiles/8.1.txt")), StandardCharsets.UTF_8);
 //
 //        /** разделитель - все небуквенные символы **/
 //        List<String> listOfWords = Arrays.asList(content.split("\\PL+"));

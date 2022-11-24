@@ -17,8 +17,8 @@ public class Exercise2 {
         Set<String> uniqueStringsOfFile = new HashSet<>();
         List<Integer> stringWithAllWords = new ArrayList<>();
 
-        try(Scanner scanner1 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-        Scanner scanner2 = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt")))
+        try(Scanner scanner1 = new Scanner(Paths.get("src/main/resources/textFiles/9.2.txt"));
+        Scanner scanner2 = new Scanner(Paths.get("src/main/resources/textFiles/9.2.txt")))
         {
             while(scanner1.hasNext())
             {
@@ -43,7 +43,7 @@ public class Exercise2 {
             io.printStackTrace();
         }
 
-        try(FileWriter fileWriter = new FileWriter("C:\\Users\\Strelets.A\\Desktop\\out.toe")) {
+        try(FileWriter fileWriter = new FileWriter("src/main/resources/textFiles/9.2.out.toe")) {
             for (String s : uniqueStringsOfFile) {
                 fileWriter.write(s);
             }

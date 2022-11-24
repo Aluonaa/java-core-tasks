@@ -11,7 +11,7 @@ public class Exercise13 {
     public static void main(String[] args) {
         Employee emp1 = new Employee("Ivan", 100000);
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\Serialization.bin")))
+                new FileOutputStream("src/main/resources/textFiles/9.13.bin")))
         {
             objectOutputStream.writeObject(emp1);
         } catch (IOException fileNotFoundException) {
@@ -19,7 +19,7 @@ public class Exercise13 {
         }
 
         try(ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\Serialization.bin")))
+                new FileInputStream("src/main/resources/textFiles/9.13.bin")))
         {
             Employee newEmployee = (Employee) objectInputStream.readObject();
             System.out.println(newEmployee.toString());

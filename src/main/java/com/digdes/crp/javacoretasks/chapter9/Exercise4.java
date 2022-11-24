@@ -18,13 +18,13 @@ public class Exercise4 {
     и удобнее всего? **/
 
     public static void main(String[] args) throws IOException {
-        try(Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
+        try(Scanner scanner = new Scanner(Paths.get("src/main/resources/textFiles/voyna-i-mir-tom-1.txt"));
 
             //BufferedReader это обертка для FileReader, которая добавляет механизм буферизации, работают быстрее, чем Scanner
             //Уменьшает количество обращений к файлу в сравнении с FileReader, что является ресурсоемкой операцией.
             // Для BufferedWriter также.
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));
-            BufferedReader readerWithLines = new BufferedReader(new FileReader("C:\\Users\\Strelets.A\\Desktop\\voyna-i-mir-tom-1.txt"));){
+            BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/textFiles/voyna-i-mir-tom-1.txt"));
+            BufferedReader readerWithLines = new BufferedReader(new FileReader("src/main/resources/textFiles/voyna-i-mir-tom-1.txt"));){
 
             // Метод Scanner
             int i = 0;

@@ -12,7 +12,7 @@ public class Exercise9 {
          строк. **/
 
         double longestWords =
-                Files.lines(Paths.get("C:\\Users\\Strelets.A\\Desktop\\q.txt"))
+                Files.lines(Paths.get("src/main/resources/textFiles/8.9.txt"))
                 .mapToInt(String::length)
                 .average()
                 .orElseThrow(IllegalStateException::new);

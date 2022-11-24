@@ -19,7 +19,7 @@ public class Exercise15 {
     public static void main(String[] args) {
         Point point = new Point(1.4, 1.8);
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\9.14.bin")))
+                new FileOutputStream("src/main/resources/textFiles/9.14.bin")))
         {
             objectOutputStream.writeObject(point);
         } catch (IOException fileNotFoundException) {
@@ -27,7 +27,7 @@ public class Exercise15 {
         }
 
         try(ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\9.14.bin")))
+                new FileInputStream("src/main/resources/textFiles/9.14.bin")))
         {
             Point newPoint = (Point) objectInputStream.readObject();
             System.out.println(newPoint.toString());

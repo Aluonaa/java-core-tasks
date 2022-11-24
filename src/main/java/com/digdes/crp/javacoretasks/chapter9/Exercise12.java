@@ -23,7 +23,7 @@ public class Exercise12 {
                 "И будит лай собак уснувшие ,дубравы.";
 
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\9.13.bin")))
+                new FileOutputStream("src/main/resources/textFiles/9.12.bin")))
         {
             objectOutputStream.writeObject(text);
         } catch (IOException fileNotFoundException) {
@@ -31,7 +31,7 @@ public class Exercise12 {
         }
 
         try(ObjectInputStream objectInputStream = new ObjectInputStream(
-            new FileInputStream("C:\\Users\\Strelets.A\\Desktop\\javaTasks\\9.13.bin")))
+            new FileInputStream("src/main/resources/textFiles/9.12.bin")))
     {
         String regex = ",";
         Pattern pattern = Pattern.compile(regex);

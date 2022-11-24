@@ -13,7 +13,7 @@ public class Exercise10 {
         потоке символьных строк. **/
 
             List<String> longestWords =
-                    Files.lines(Paths.get("C:\\Users\\Strelets.A\\Desktop\\q.txt"))
+                    Files.lines(Paths.get("src/main/resources/textFiles/8.1.txt"))
                             .collect(Collectors.groupingBy(String::length))
                             .entrySet()
                             .stream()
