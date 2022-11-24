@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter10;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -8,14 +7,10 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
-public class Exercise11 {
-    /** Повторите предыдущее упражнение, но на этот раз сформируйте в задаче
-    потребителя отображение слов и частоты, с которой они вводятся во вторую
-    очередь. В последнем потоке исполнения полученные словари должны быть
-    объединены, а затем выведены десять наиболее употребительных слов. Почему
-    для этой цели не потребуется отображение типа ConcurrentHashMap?
-
-    Решение: потому что у каждого потока своя коллекция, а объединяются они в main**/
+public class Exercise13 {
+    /** Повторите предыдущее упражнение, воспользовавшись на этот раз интерфейсом
+    ExecutorCompletionService и объединив полученные результаты, как
+    только все они будут доступны **/
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
@@ -44,15 +39,16 @@ public class Exercise11 {
                     }
                     wordsWithFrequencyOfUse.remove("");
                     return wordsWithFrequencyOfUse;
+
                 });
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        List<Future<HashMap<String, Integer>>> results = executorService.invokeAll(tasks);
+        Executor exec = Executors.newCachedThreadPool();
+        ExecutorCompletionService<HashMap<String, Integer>> executorCompletionService = new ExecutorCompletionService<>(exec);
+        for (Callable<HashMap<String, Integer>> task : tasks) executorCompletionService.submit(task);
 
-        executorService.shutdown();
         HashMap<String, Integer> allWords = new HashMap<>();
-        for (Future<HashMap<String, Integer>> future : results) {
-            HashMap<String, Integer> currentHashMap = future.get();
+        for (int i = 0; i < tasks.size(); i++) {
+            HashMap<String, Integer> currentHashMap = executorCompletionService.take().get();
             for(Map.Entry<String, Integer> entry: currentHashMap.entrySet()){
                 if(currentHashMap.containsKey(entry.getKey())){
                     allWords.put(entry.getKey(), currentHashMap.get(entry.getKey()) + entry.getValue());
@@ -60,9 +56,11 @@ public class Exercise11 {
                 else {
                     allWords.put(entry.getKey(), entry.getValue());
                 }
+                //System.out.println(allWords);
             }
-            //System.out.println(allWords);
         }
+
+
         Comparator<Map.Entry<String, Integer>> valueComparator = Map.Entry.comparingByValue();
 
         Map<String, Integer> sortedMap =
@@ -71,11 +69,10 @@ public class Exercise11 {
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
 
-
+        executorCompletionService.poll();
         for(int i = 1; i<=10; i++) {
             System.out.println(sortedMap.entrySet().toArray()[sortedMap.size() - i]);
         }
 
     }
 }
-
