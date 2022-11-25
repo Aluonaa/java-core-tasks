@@ -56,16 +56,16 @@ public class Exercise13 {
 
         Comparator<Map.Entry<String, Integer>> valueComparator = Map.Entry.comparingByValue();
 
+
         Map<String, Integer> sortedMap =
                 allWords.entrySet().stream().
-                        sorted(valueComparator).
+                        sorted(valueComparator).limit(10).
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
 
 
-        for(int i = 1; i<=10; i++) {
-            System.out.println(sortedMap.entrySet().toArray()[sortedMap.size() - i]);
-        }
+            System.out.println(sortedMap);
+
 
     }
 }
