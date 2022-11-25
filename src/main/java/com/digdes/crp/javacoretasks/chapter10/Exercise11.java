@@ -21,15 +21,15 @@ public class Exercise11 {
 
         final File folder = new File("src/main/resources/textFiles/10.11");
 
-        List<Callable<HashMap<String, Integer>>> tasks = new ArrayList();
-        for (File f: folder.listFiles()) tasks.add(
+        List<Callable<HashMap<String, Integer>>> tasks = new ArrayList<>();
+        for (File f: Objects.requireNonNull(folder.listFiles())) tasks.add(
                 () -> {
                     HashMap<String, Integer> wordsWithFrequencyOfUse = new HashMap<>();
-                    try(Scanner scanner1 = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
+                    try(Scanner scanner = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
                     {
-                        while(scanner1.hasNext())
+                        while(scanner.hasNext())
                         {
-                            String currentWord = scanner1.next();
+                            String currentWord = scanner.next();
                             currentWord = currentWord.replaceAll("[^A-Za-zА-Яа-я]", "");
                             if(wordsWithFrequencyOfUse.containsKey(currentWord)){
                                 wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
@@ -48,21 +48,16 @@ public class Exercise11 {
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         List<Future<HashMap<String, Integer>>> results = executorService.invokeAll(tasks);
-
         executorService.shutdown();
-        HashMap<String, Integer> allWords = new HashMap<>();
+        ConcurrentHashMap<String, Integer> allWords = new ConcurrentHashMap<>();
+
         for (Future<HashMap<String, Integer>> future : results) {
             HashMap<String, Integer> currentHashMap = future.get();
-            for(Map.Entry<String, Integer> entry: currentHashMap.entrySet()){
-                if(currentHashMap.containsKey(entry.getKey())){
-                    allWords.put(entry.getKey(), currentHashMap.get(entry.getKey()) + entry.getValue());
-                }
-                else {
-                    allWords.put(entry.getKey(), entry.getValue());
-                }
-            }
-            //System.out.println(allWords);
+            currentHashMap.forEach((key, value) ->
+                    allWords.merge(key, value, Integer::sum) );
+
         }
+
         Comparator<Map.Entry<String, Integer>> valueComparator = Map.Entry.comparingByValue();
 
         Map<String, Integer> sortedMap =
@@ -71,11 +66,9 @@ public class Exercise11 {
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
 
-
         for(int i = 1; i<=10; i++) {
             System.out.println(sortedMap.entrySet().toArray()[sortedMap.size() - i]);
         }
-
     }
 }
 
