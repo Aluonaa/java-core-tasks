@@ -4,6 +4,7 @@ package com.digdes.crp.javacoretasks.chapter10;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ExecutorService;
@@ -21,10 +22,8 @@ public class Exercise10 {
         Runnable runnableForOneThread = () -> {
             final File folder = new File("src/main/resources/textFiles/10.10");
             ConcurrentLinkedDeque<File> concurrentLinkedDeque = new ConcurrentLinkedDeque<>();
-            for (final File fileEntry : folder.listFiles()) {
-                if (fileEntry.isDirectory()) {
-
-                } else {
+            for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
+                if (!fileEntry.isDirectory()) {
                     concurrentLinkedDeque.add(fileEntry);
                     System.out.println(fileEntry.getName());
                 }
@@ -64,7 +63,7 @@ public class Exercise10 {
             }
          };
 
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
+        ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(runnableForMultipleThreads);
         executorService.shutdown();
     }

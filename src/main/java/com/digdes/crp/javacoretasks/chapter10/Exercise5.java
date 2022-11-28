@@ -25,7 +25,7 @@ public class Exercise5 {
         ExecutorService exec = Executors.newCachedThreadPool();
         Callable<ConcurrentHashMap<Path, String>> task;
 
-            ConcurrentHashMap<Path, String> concurrentHashMap = new ConcurrentHashMap<>();
+        ConcurrentHashMap<Path, String> concurrentHashMap = new ConcurrentHashMap<>();
 
         task = () -> {pathList.forEach(path -> {
             try (Scanner scanner = new Scanner(path)) {

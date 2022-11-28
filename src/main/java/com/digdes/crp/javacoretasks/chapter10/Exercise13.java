@@ -59,7 +59,7 @@ public class Exercise13 {
 
         Map<String, Integer> sortedMap =
                 allWords.entrySet().stream().
-                        sorted(valueComparator).limit(10).
+                        sorted(valueComparator.reversed()).limit(10).
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
 
