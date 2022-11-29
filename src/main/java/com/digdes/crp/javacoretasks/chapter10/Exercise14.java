@@ -16,7 +16,7 @@ public class Exercise14 {
         final File folder = new File("src/main/resources/textFiles/10.11");
 
         ConcurrentHashMap<String, Integer> wordsWithFrequencyOfUse = new ConcurrentHashMap<>();
-        Callable<ConcurrentHashMap<String, Integer>> tasks = () -> {
+        Callable<ConcurrentHashMap<String, Integer>> task = () -> {
                     for (File f: Objects.requireNonNull(folder.listFiles())) {
                     try(Scanner scanner1 = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
                     {
@@ -37,7 +37,7 @@ public class Exercise14 {
         };
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Future<ConcurrentHashMap<String, Integer>> results = executorService.submit(tasks);
+        Future<ConcurrentHashMap<String, Integer>> results = executorService.submit(task);
         ConcurrentHashMap<String, Integer> map = results.get();
 
         executorService.shutdown();
@@ -46,7 +46,7 @@ public class Exercise14 {
 
         Map<String, Integer> sortedMap =
                 map.entrySet().stream().
-                        sorted(valueComparator).limit(10).
+                        sorted(valueComparator.reversed()).limit(10).
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
 
