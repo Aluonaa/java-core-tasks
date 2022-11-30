@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter4;
 
-import java.util.Objects;
 
 public class Exercise6 {
     /** Допустим, что в методе Item.equals(), представленном в разделе 4.2.2,
