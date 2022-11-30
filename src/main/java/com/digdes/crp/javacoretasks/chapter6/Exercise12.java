@@ -1,10 +1,8 @@
 package com.digdes.crp.javacoretasks.chapter6;
 
 import com.digdes.crp.javacoretasks.chapter3.Employee;
-import com.digdes.crp.javacoretasks.chapter3.Measurable;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Exercise12 {
     /** Реализуйте следующий метод, сохраняющий наименьший и наибольший элементы
