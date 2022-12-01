@@ -19,10 +19,7 @@ public class Stack2 <E> {
     }
 
     public void push(E element){
-//        E[] mass2 = (E[]) new Object();
-//        mass2[] = mass.clone();
 
-        mass[mass.length-1] = element;
     }
 
 //    public void push(Object element){
