@@ -24,7 +24,7 @@ public class Exercise14 {
                         {
                             String currentWord = scanner1.next();
                             currentWord = currentWord.replaceAll("[^A-Za-zА-Яа-я]", "");
-                                wordsWithFrequencyOfUse.compute(currentWord, (k, v) -> v == null ? 1 : v + 1);
+                                wordsWithFrequencyOfUse.merge(currentWord, 1, Integer::sum);
                         }
                     }
                     catch (IOException io){

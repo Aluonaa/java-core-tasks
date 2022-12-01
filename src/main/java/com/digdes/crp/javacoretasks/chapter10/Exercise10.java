@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter10;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -34,15 +33,13 @@ public class Exercise10 {
         executorService1.execute(runnableForOneThread);
         executorService1.shutdown();
 
-
+        //Несколько потоков исполнения
         Runnable runnableForMultipleThreads = () -> {
             final File folder = new File("src/main/resources/textFiles/10.10");
             ConcurrentLinkedDeque<File> concurrentLinkedDeque = new ConcurrentLinkedDeque<>();
             String word = "Hello";
-            for (final File fileEntry : folder.listFiles()) {
-                if (fileEntry.isDirectory()) {
-
-                } else {
+            for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
+                if (!fileEntry.isDirectory()) {
                     concurrentLinkedDeque.add(fileEntry);
                 }
             }

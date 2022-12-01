@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter10;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -31,12 +30,7 @@ public class Exercise11 {
                         {
                             String currentWord = scanner.next();
                             currentWord = currentWord.replaceAll("[^A-Za-zА-Яа-я]", "");
-                            if(wordsWithFrequencyOfUse.containsKey(currentWord)){
-                                wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
-                            }
-                            else {
-                                wordsWithFrequencyOfUse.put(currentWord, 1);
-                            }
+                            wordsWithFrequencyOfUse.merge(currentWord, 1, Integer::sum);
                         }
                     }
                     catch (IOException io){

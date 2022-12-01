@@ -26,12 +26,7 @@ public class Exercise13 {
                         {
                             String currentWord = scanner1.next();
                             currentWord = currentWord.replaceAll("[^A-Za-zА-Яа-я]", "");
-                            if(wordsWithFrequencyOfUse.containsKey(currentWord)){
-                                wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
-                            }
-                            else {
-                                wordsWithFrequencyOfUse.put(currentWord, 1);
-                            }
+                            wordsWithFrequencyOfUse.merge(currentWord, 1, Integer::sum);
                         }
                     }
                     catch (IOException io){
@@ -62,7 +57,6 @@ public class Exercise13 {
                         sorted(valueComparator.reversed()).limit(10).
                         collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e1, LinkedHashMap::new));
-
 
             System.out.println(sortedMap);
 
