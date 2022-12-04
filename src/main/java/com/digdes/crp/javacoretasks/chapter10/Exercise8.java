@@ -10,12 +10,13 @@ public class Exercise8 {
      *  инкрементируется 100000 раз. Сравните производительность
      *  при использовании классов AtomicLong и LongAdder. **/
 
+    public static LongAdder count = new LongAdder();
     public static void main(String[] args) {
         ExecutorService executorServiceAtomicLong = Executors.newFixedThreadPool(1000);
         long startAtomicLong = System.currentTimeMillis();
         executorServiceAtomicLong.execute(() -> {
+            AtomicLong nextNumber = new AtomicLong();
             for(int i =0; i<100000; i++) {
-                AtomicLong nextNumber = new AtomicLong();
                 nextNumber.incrementAndGet();
             }
         });
@@ -25,12 +26,15 @@ public class Exercise8 {
         ExecutorService executorServiceLongAdder = Executors.newFixedThreadPool(1000);
         long startLongAdder = System.currentTimeMillis();
         executorServiceLongAdder.execute(() ->{
+            LongAdder count = new LongAdder();
             for(int i =0; i<100000; i++) {
-                LongAdder count = new LongAdder();
                 count.increment();
             }
+            System.out.println(count);
         });
         long endAtomicAdder = System.currentTimeMillis();
+        executorServiceAtomicLong.shutdown();
+        executorServiceLongAdder.shutdown();
 
         System.out.println(endAtomicLong - startAtomicLong);
         System.out.println(endAtomicAdder - startLongAdder);

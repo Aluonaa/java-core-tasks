@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class Exercise2 {
+
    /** Определите разность во времени подсчета длинных слов с помощью методов
     parallelStream() и stream(). Вызовите метод System.current TimeMillis()
     до и после этих методов и выведите разность **/

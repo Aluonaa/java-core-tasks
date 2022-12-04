@@ -19,7 +19,6 @@ public class Exercise16 {
     исполнения без синхронизации, то конечный результат непредсказуем.
      **/
 
-
     public static long count = 0;
 
     public static AtomicLong nextNumber = new AtomicLong();
@@ -31,7 +30,7 @@ public class Exercise16 {
         List<Callable<Long>> tasks = new ArrayList<>();
         for (File f: Objects.requireNonNull(folder.listFiles())) tasks.add(
                 () -> {
-                    long count2 = 0;
+                    long countForThread = 0;
                     try(Scanner scanner = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
                     {
                         while(scanner.hasNextLine())
@@ -39,14 +38,14 @@ public class Exercise16 {
                             String currentLine = scanner.nextLine();
                             String[] massOfWords = currentLine.split(" ");
                             for(int i=0; i<massOfWords.length; i++) {
-                                count2 = nextNumber.incrementAndGet();
+                                countForThread = nextNumber.incrementAndGet();
                             }
                         }
                     }
                     catch (IOException io){
                         io.printStackTrace();
                     }
-                    return count2;
+                    return countForThread;
                 });
 
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -56,6 +55,7 @@ public class Exercise16 {
             System.out.println(future.get());
             count += future.get();
         }
+
         executorService.shutdown();
 
     }

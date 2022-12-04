@@ -43,7 +43,7 @@ public class Exercise11 {
         ExecutorService executorService = Executors.newCachedThreadPool();
         List<Future<HashMap<String, Integer>>> results = executorService.invokeAll(tasks);
         executorService.shutdown();
-        ConcurrentHashMap<String, Integer> allWords = new ConcurrentHashMap<>();
+        HashMap<String, Integer> allWords = new HashMap<>();
 
         for (Future<HashMap<String, Integer>> future : results) {
             HashMap<String, Integer> currentHashMap = future.get();
