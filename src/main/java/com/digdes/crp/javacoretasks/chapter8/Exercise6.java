@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter8;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Exercise6 {
@@ -13,9 +12,10 @@ public class Exercise6 {
     достоверным в Java идентификатором **/
 
     public static void main(String[] args) {
-//        String a = "Hello234";
-//        IntStream d = a.codePoints();
-//        System.out.println();
+        String a = "Hello234";
+        IntStream intStream = a.codePoints();
+        boolean b = intStream.allMatch(Character::isAlphabetic);
+        System.out.println(b);
 
     }
 }
