@@ -13,8 +13,8 @@ public class Exercise5 {
     построены надлежащим образом. **/
 
     public static void main(String[] args) {
-        String filenameFrom = "C:\\Users\\Strelets.A\\Desktop\\qq.txt";
-        String fileNameTo = "C:\\Users\\Strelets.A\\Desktop\\qq2.txt";
+        String filenameFrom = "src/main/resources/textFiles/5.5/5.5.1.txt";
+        String fileNameTo = "src/main/resources/textFiles/5.5/5.5.2.txt";
         writingFromFileToAnother(filenameFrom, fileNameTo);
     }
 
