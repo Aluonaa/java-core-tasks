@@ -1,5 +1,6 @@
 package com.digdes.crp.javacoretasks.chapter11;
 
+
 public class Exercise1 {
 
     /** Поясните, каким образом можно изменить метод Object.clone(),
