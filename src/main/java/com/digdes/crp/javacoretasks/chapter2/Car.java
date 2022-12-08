@@ -9,11 +9,9 @@ import static java.lang.System.out;
 
 public class Car {
 
-    /** 2.9 **/
-    /** 2.11 **/
     private int distance; // Расстояние
     private int fuelTank; // Топливный бак
-    private int fuelConsumption; //Потребление топлива
+    private final int fuelConsumption; //Потребление топлива
 
     public Car(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;

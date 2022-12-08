@@ -5,7 +5,6 @@ public class Queue {
     Node first;
     Node last;
 
-
     Queue add(String val) {
         Node l = last;
         last = new Node(l, null, val);

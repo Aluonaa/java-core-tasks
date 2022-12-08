@@ -1,8 +1,6 @@
 package com.digdes.crp.javacoretasks.chapter2;
 
-public class Plane {
-
-    public static class Point {
+public final class ImmutablePoint {
 
         /**
          * Координаты точки на плоскости
@@ -13,7 +11,7 @@ public class Plane {
         /**
          * Конструктор без параметров
          **/
-        public Point() {
+        public ImmutablePoint() {
             x = 0;
             y = 0;
         }
@@ -21,7 +19,7 @@ public class Plane {
         /**
          * Конструктор Point с предоставлением начальных точек
          **/
-        public Point(int x, int y) {
+        public ImmutablePoint(int x, int y) {
             this.x = x;
             this.y = y;
         }
@@ -61,6 +59,4 @@ public class Plane {
                     ", y=" + y +
                     '}';
         }
-}
-
 }

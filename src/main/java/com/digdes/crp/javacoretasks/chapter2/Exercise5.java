@@ -14,7 +14,7 @@ public class Exercise5 {
             в переменной р должна быть установлена точка с координатами (2, 3,5). **/
 
     public static void main(String[] args){
-        Plane.Point point = new Plane.Point();
+        ImmutablePoint point = new ImmutablePoint();
         System.out.println(point.getX());
         System.out.println(point.getY());
         point.translate(1, 3);
