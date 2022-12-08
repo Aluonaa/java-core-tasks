@@ -11,7 +11,6 @@ public class MyAppResources_en extends ListResourceBundle {
                 { "backgroundColor", Color.BLACK },
                 { "defaultPaperSize", new double[] { 210, 297 } },
                 { "currency", Currency.getInstance(Locale.US) },
-                { "locale", Locale.US }
         };
     }
 }

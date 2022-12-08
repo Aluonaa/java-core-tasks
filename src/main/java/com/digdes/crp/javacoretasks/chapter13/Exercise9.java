@@ -25,11 +25,6 @@ public class Exercise9 {
                 ResourceBundle.getBundle("com.digdes.crp.javacoretasks.chapter13.MyAppResources_en", localeUS);
 
 
-//        ResourceBundle resFrance = ResourceBundle.getBundle("MyAppResources_en");
-//        ResourceBundle resUS = ResourceBundle.getBundle("MyAppResources_fr");
-//        Locale localeFrance = (Locale) resFrance.getObject("locale");
-//        Locale localeUS = (Locale) resUS.getObject("locale");
-
         Currency currencyFrance = (Currency) bundleFrance.getObject("currency");
         Currency currencyUS = (Currency) bundleUS.getObject("currency");
 
@@ -40,15 +35,6 @@ public class Exercise9 {
         MessageFormat mfUS = new MessageFormat(template, localeUS);
         String messageUS = mfUS.format(new Object[]{ money, currencyUS});
         System.out.println(messageUS);
-
-//        ResourceBundle bundle =
-//                ResourceBundle.getBundle("com.mycompany.MyAppResources", localeFrance);
-//        Color backgroundColor = (Color) bundle.getObject("backgroundColor");
-//        double[] paperSize = (double[]) bundle.getObject("defaultPaperSize");
-
-
-
-
     }
 
 }
