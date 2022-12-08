@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Exercise15 {
-
     /** Напишите программу, сохраняющую треугольник Паскаля вплоть до заданной
     величины п в переменной типа ArrayList<ArrayList<Integer». **/
 
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int size = size("Enter size: ");
+        int size = size();
         List<List<Integer>> triangle = new ArrayList<List<Integer>>() {{
             add(Collections.singletonList(1));
         }};
@@ -35,8 +34,8 @@ public class Exercise15 {
         }
     }
 
-    private static int size(String caption) {
-        System.out.print(caption);
+    private static int size() {
+        System.out.print("Enter size: ");
         return sc.nextInt();
     }
 

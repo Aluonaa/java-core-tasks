@@ -77,7 +77,7 @@ public class Exercise14 {
             }
         }
 
-//      Проверка на равенство сумм столбцов и строк
+        //Проверка на равенство сумм столбцов и строк
         if(summStroka[0] != summColumns[0]){
             return false;
         }

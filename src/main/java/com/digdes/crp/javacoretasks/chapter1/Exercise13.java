@@ -19,7 +19,7 @@ public class Exercise13 {
         Random random = new Random();
         for (int i = 0; i < 6; i++) {
             int deletedNumber = (random.nextInt(size) + 1) % size;
-            integerList.remove(random.nextInt(size));
+            integerList.remove(deletedNumber);
             size--;
             newIntegerList.add(deletedNumber);
         }
