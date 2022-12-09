@@ -18,8 +18,10 @@ public class Line extends Shape implements Cloneable {
         return null;
     }
 
+
+
     @Override
-    protected Line clone(){
+    protected Line clone() {
         Line clone = new Line();
         Point point = new Point(this.getPoint().getX(), this.getPoint().getY());
         clone.to = this.to;

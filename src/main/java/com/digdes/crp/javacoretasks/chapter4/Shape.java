@@ -1,8 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter4;
 
-/** 4.4 **/
-/** 4.5 **/
-
 
 public abstract class Shape {
       private Point point;
@@ -28,5 +25,9 @@ public abstract class Shape {
 
     public abstract Point getCenter();
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
 

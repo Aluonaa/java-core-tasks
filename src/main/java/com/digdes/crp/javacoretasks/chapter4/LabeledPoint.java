@@ -6,8 +6,8 @@ public class LabeledPoint extends Point{
 
     String label;
 
-    LabeledPoint(double х, double у, String label) {
-        super(х, у);
+    LabeledPoint(double x, double y, String label) {
+        super(x, y);
         this.label = label;
     }
 

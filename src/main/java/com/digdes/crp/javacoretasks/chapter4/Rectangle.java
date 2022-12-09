@@ -21,7 +21,7 @@ public class Rectangle extends Shape{
     }
 
     @Override
-    protected Rectangle clone(){
+    protected Rectangle clone() {
         Rectangle clone = new Rectangle();
         Point point = new Point(this.getPoint().getX(), this.getPoint().getY());
         clone.width = this.width;

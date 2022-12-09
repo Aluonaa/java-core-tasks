@@ -1,13 +1,8 @@
 package com.digdes.crp.javacoretasks.chapter4;
 
-/** 4.1 **/
-/** 4.2 **/
-
 import java.util.Objects;
 
-/** 4.3 **/
-
-    class Point{
+public class Point{
     protected double x;
     protected double y;
 
@@ -21,15 +16,6 @@ import java.util.Objects;
     }
     public double getY(){
         return y;
-    }
-
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
     }
 
 

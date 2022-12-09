@@ -3,7 +3,7 @@ package com.digdes.crp.javacoretasks.chapter4;
 import java.util.Objects;
 
 public class DiscountedItem extends Item {
-    private double discount;
+    private final double discount;
 
     public DiscountedItem(String description, double price, double discount) {
         super(description, price);

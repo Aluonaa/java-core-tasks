@@ -3,7 +3,6 @@ package com.digdes.crp.javacoretasks.chapter4;
 import java.lang.reflect.Method;
 
 public class Exercise13 {
-
     /** Напишите метод, выводящий таблицу значений из любого объекта типа Method,
     описывающего метод с параметром типа double или Double. Помимо
     объекта типа Method, этот метод должен принимать нижний и верхний предел,

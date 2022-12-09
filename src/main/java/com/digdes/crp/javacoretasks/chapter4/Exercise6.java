@@ -10,6 +10,7 @@ public class Exercise6 {
     этот метод сохраняет симметричность, но не транзитивность, т.е. способность
     обнаруживать сочетание товаров по обычной цене и со скидкой, чтобы делать
     вызовы х.equals(у) и у.equals(z), но не х.equals(z). **/
+
     public static void main(String[] args) {
 
         DiscountedItem x = new DiscountedItem("item", 1, 0.1);
