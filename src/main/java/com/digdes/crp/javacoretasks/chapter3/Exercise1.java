@@ -2,9 +2,9 @@ package com.digdes.crp.javacoretasks.chapter3;
 
 public class Exercise1 {
     /** Предоставьте интерфейс Measurable с методом
-    doublegetMeasure(), измеряющим объект
+    double getMeasure(), измеряющим объект
     определенным образом. Создайте класс Employee,
-    реализующий интерфейс Measurable . Предоставьте
+    реализующий интерфейс Measurable. Предоставьте
     метод double average(Measurable[] objects), вычисляющий среднюю меру.
     Воспользуйтесь им для расчета средней зарплаты в массиве работников. **/
 

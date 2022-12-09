@@ -3,7 +3,6 @@ package com.digdes.crp.javacoretasks.chapter3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class Exercise7 {
     /** Реализуйте метод void luckySort(ArrayList<String> strings, Comparator

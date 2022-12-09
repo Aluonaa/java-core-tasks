@@ -21,16 +21,6 @@ public class Exercise10 {
 
     }
 
-    private static File[] getSubdirectoriesWithLambda(String path) {
-        File[] subdirectories = new File(path).listFiles(f -> f.isDirectory());
-        if(subdirectories == null){
-            return  new File[0];
-        }
-        else{
-            return subdirectories;
-        }
-    }
-
     private static File[] getSubdirectories(String path) {
         File[] subdirectories = new File(path).listFiles(File::isDirectory);
         if(subdirectories == null){
@@ -41,8 +31,19 @@ public class Exercise10 {
         }
     }
 
+    private static File[] getSubdirectoriesWithLambda(String path) {
+        File[] subdirectories = new File(path).listFiles(f -> f.isDirectory()); // тут должна быть лямбда по заданию
+        if(subdirectories == null){
+            return  new File[0];
+        }
+        else{
+            return subdirectories;
+        }
+    }
+
+
     private static File[] getSubdirectoriesWithInnerClass(String path) {
-        File[] subdirectories = new File(path).listFiles(new FileFilter() {
+        File[] subdirectories = new File(path).listFiles(new FileFilter() { // тут должен быть анонимный по заданию
             @Override
             public boolean accept(File f) {
                 return f.isDirectory();

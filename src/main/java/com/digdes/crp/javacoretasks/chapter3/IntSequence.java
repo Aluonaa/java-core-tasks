@@ -4,7 +4,6 @@ import java.util.function.IntSupplier;
 
 public interface IntSequence {
 
-
     static int[] of(int... values){
         int[] mass = new int[values.length];
         System.arraycopy(values, 0, mass, 0, values.length);

@@ -3,6 +3,8 @@ package com.digdes.crp.javacoretasks.chapter3;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
+import static com.digdes.crp.javacoretasks.chapter3.Employee.largest;
+
 public class Exercise2 {
     /** Продолжите предыдущее упражнение, предоставив метод Measurable
     largest(Measurable[] objects). Воспользуйтесь им,
@@ -20,16 +22,11 @@ public class Exercise2 {
      **/
     public static void main(String[] args) {
 
-        Employee employee = new Employee("Oleg", 100000);
-        Employee employee1 = new Employee("Ivan", 110000);
-        Employee employee2 = new Employee("Olga", 120000);
-        Measurable[] employees = {employee, employee1, employee2};
+        Employee employee1 = new Employee("Oleg", 100000);
+        Employee employee2 = new Employee("Ivan", 110000);
+        Employee employee3 = new Employee("Olga", 120000);
+        Measurable[] employees = {employee1, employee2, employee3};
         Employee maxSalary = (Employee) largest(employees);
         System.out.println(maxSalary.getName());
     }
-
-        public static Measurable largest (Measurable[]objects){
-            return Stream.of(objects).max(Comparator.comparing(Measurable::getMeasure)).orElse(null);
-        }
-
 }

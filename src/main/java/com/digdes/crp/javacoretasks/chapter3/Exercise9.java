@@ -14,10 +14,8 @@ public class Exercise9 {
     возвращать полученный результат по завершении последнего метода **/
 
     public static void main(String[] args) {
-        Runnable[] tasksForRunTogether = createTasks(9);
-        Runnable[] tasksForRunInOrder = createTasks(5);
-        runTogether(tasksForRunTogether);
-        runInOrder(tasksForRunInOrder);
+        runTogether(createTasks(9));
+        runInOrder(createTasks(5));
 
     }
     public static Runnable[] createTasks(int count){

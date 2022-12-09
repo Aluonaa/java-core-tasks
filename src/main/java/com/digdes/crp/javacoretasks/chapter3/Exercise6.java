@@ -22,23 +22,5 @@ public class Exercise6 {
         Stream.generate(sequence::next).limit(limit).forEach(System.out::print);
         System.out.println();
     }
-
-    static class DigitSequence implements Iterator<Integer> {
-
-        private int value = 0;
-
-        @Override
-        public boolean hasNext() {
-            return true;
-        }
-
-        @Override
-        public Integer next() {
-            return value++;
-        }
-
-        public void remove() {
-        }
-    }
 }
 

@@ -2,8 +2,8 @@ package com.digdes.crp.javacoretasks.chapter3;
 
 public class Greeter implements Runnable{
 
-    int n;
-    String target;
+    private final int n;
+    private final String target;
 
     public Greeter(int n, String target){
         this.n = n;

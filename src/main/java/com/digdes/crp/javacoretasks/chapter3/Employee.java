@@ -1,7 +1,8 @@
 package com.digdes.crp.javacoretasks.chapter3;
 
-
 import java.io.Serializable;
+import java.util.Comparator;
+import java.util.stream.Stream;
 
 public class Employee implements Measurable, Serializable{
 
@@ -34,8 +35,11 @@ public class Employee implements Measurable, Serializable{
         for(Measurable object: objects){
             averageSalary += object.getMeasure();
         }
-        averageSalary = averageSalary / objects.length;
-        return averageSalary;
+        return averageSalary / objects.length;
+    }
+
+    public static Measurable largest (Measurable[]objects){
+        return Stream.of(objects).max(Comparator.comparing(Measurable::getMeasure)).orElse(null);
     }
 
     @Override
