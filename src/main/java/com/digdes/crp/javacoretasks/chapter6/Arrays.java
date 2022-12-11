@@ -9,36 +9,45 @@ public class Arrays {
     }
 
     public static <E extends Number> E maxElement(E[] array){
+        if(array.length == 0){
+            return null;
+        }
         E max = array[0];
-        for(int i=0; i<array.length; i++){
-            if (array[i].doubleValue() > max.doubleValue()){
-                max = array[i];
+        for (E e : array) {
+            if (e.doubleValue() > max.doubleValue()) {
+                max = e;
             }
         }
         return max;
     }
 
     public static <E extends Number> E minElement(E[] array){
+        if(array.length == 0){
+            return null;
+        }
         E min = array[0];
-        for(int i=0; i<array.length; i++){
-            if (array[i].doubleValue() < min.doubleValue()){
-                min = array[i];
+        for (E e : array) {
+            if (e.doubleValue() < min.doubleValue()) {
+                min = e;
             }
         }
         return min;
     }
 
     public static <E extends Number> Pair<E> minMax(E[] array){
+        if(array.length == 0){
+            return null;
+        }
         E min = array[0];
         E max = array[0];
-        for(int i=0; i<array.length; i++){
-            if (array[i].doubleValue() < min.doubleValue()){
-                min = array[i];
+        for (E e : array) {
+            if (e.doubleValue() < min.doubleValue()) {
+                min = e;
             }
         }
-        for(int i=0; i<array.length; i++){
-            if (array[i].doubleValue() > max.doubleValue()){
-                max = array[i];
+        for (E e : array) {
+            if (e.doubleValue() > max.doubleValue()) {
+                max = e;
             }
         }
         return new Pair<E>(min, max);

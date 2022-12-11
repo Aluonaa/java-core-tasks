@@ -1,27 +1,17 @@
 package com.digdes.crp.javacoretasks.chapter6;
 
 
-/** 6.1 **/
-
 import java.util.ArrayList;
 
 public class Stack<E> {
 
-    private ArrayList<E> arrayList;
+    private final ArrayList<E> arrayList;
 
-    public Stack(){};
 
     public Stack(ArrayList<E> arrayList){
         this.arrayList = arrayList;
     }
 
-    public ArrayList<E> getArrayList() {
-        return arrayList;
-    }
-
-    public void setArrayList(ArrayList<E> arrayList) {
-        this.arrayList = arrayList;
-    }
 
     public boolean isEmpty(){
         return arrayList.isEmpty();
@@ -39,6 +29,6 @@ public class Stack<E> {
 
     @Override
     public String toString() {
-        return this.getClass() + " Стек:" + arrayList;
+        return this.getClass() + " Стек: " + arrayList;
     }
 }

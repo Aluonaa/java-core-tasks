@@ -15,6 +15,10 @@ public class Entry<K, V> {
         this.key = key;
     }
 
+    public void setValue(V value) {
+        this.value = value;
+    }
+
     public void deleteKey(){
         key = null;
     }

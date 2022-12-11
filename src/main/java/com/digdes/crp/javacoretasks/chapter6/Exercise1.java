@@ -16,6 +16,8 @@ public class Exercise1 {
         Stack<String> stringStack = new Stack<>(arrayList);
         System.out.println(stringStack.isEmpty());
         System.out.println(stringStack.pop());
+        System.out.println(stringStack.pop());
+        System.out.println(stringStack.pop());
         stringStack.push("Hello0");
 
         System.out.println(stringStack);

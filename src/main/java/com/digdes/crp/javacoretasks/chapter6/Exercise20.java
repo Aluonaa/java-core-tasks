@@ -1,6 +1,7 @@
 package com.digdes.crp.javacoretasks.chapter6;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Exercise20 {
     /** Реализуйте следующий метод:
@@ -13,14 +14,16 @@ public class Exercise20 {
         Integer integer1 = 4;
         Integer integer2 = 7;
         Integer integer3 = 9;
+        System.out.println(Arrays.toString(repeat(10, integer1, integer2, integer3)));
 
     }
 
-    @SafeVarargs public static final <T> T[] repeat(int n, T... objs){
-        T[] t = (T[]) Array.newInstance(objs.getClass(), n); //5 is length
-        int length = Array.getLength(t); // will be 5
+    @SafeVarargs
+    public static <T> T[] repeat(int n, T... objs){
+        T[] t = (T[]) Array.newInstance(objs.getClass(), n);
+        int length = Array.getLength(t);
         for (int i=0; i<length; i++)
-            Array.set(t, i, objs); // set your val here
+            Array.set(t, i, objs);
         return t;
     }
 }

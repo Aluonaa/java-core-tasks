@@ -6,13 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise4 {
-
     /** Повторите предыдущее упражнение, но на этот раз не пользуйтесь
     исключениями. Вместо этого организуйте возврат кодов ошибок из
     методов readValues() и sumOfValues(). **/
 
     public static void main(String[] args) {
-        String filename = "C:\\Users\\Strelets.A\\Desktop\\qq.txt";
+        String filename = "src/main/resources/textFiles/5.1.txt";
         System.out.println(sumOfValues(filename));
     }
     public static Result readValues(String filename, ArrayList<Double> doubleArrayList){

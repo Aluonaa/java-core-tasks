@@ -4,19 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StackWithObject<E> {
+public class StackWithMassOfObject {
 
-    Object[] mass;
+    private Object[] mass;
 
-    public StackWithObject(Object[] mass){
-        this.mass = mass;
-    }
-
-    public Object[] getMass() {
-        return mass;
-    }
-
-    public void setMass(Object[] mass) {
+    public StackWithMassOfObject(Object[] mass){
         this.mass = mass;
     }
 

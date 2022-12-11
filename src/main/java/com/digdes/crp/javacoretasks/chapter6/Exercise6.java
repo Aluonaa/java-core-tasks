@@ -10,18 +10,22 @@ public class Exercise6 {
     типом ? super Е. **/
 
     public static void main(String[] args) {
-        ArrayList<Integer> numbers1 = new ArrayList<>();
-        numbers1.add(1);
-        numbers1.add(2);
-        System.out.println(copyExtends(numbers1));
-        System.out.println(copySuper(numbers1));
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> list3 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        System.out.println(copyExtends(list1, list3));
+        System.out.println(copySuper(list1, list2));
     }
-    public static ArrayList<? extends Number> copyExtends(ArrayList<? extends Integer> numbers1){
-        return new ArrayList<Integer>(numbers1);
+    public static <T> ArrayList<? extends T> copyExtends(ArrayList<? extends T> list1, ArrayList<T> list3){
+        list3.addAll(list1);
+        return list1;
     }
 
-    public static ArrayList<? super Number> copySuper(ArrayList<? super Integer> numbers1){
-        return new ArrayList<>(numbers1);
+    public static <T> ArrayList<? super T> copySuper(ArrayList<? super T> list2, ArrayList<T> list3){
+        list2.addAll(list3);
+        return list2;
     }
 
 

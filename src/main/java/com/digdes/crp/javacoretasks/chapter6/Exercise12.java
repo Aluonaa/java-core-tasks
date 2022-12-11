@@ -29,7 +29,6 @@ public class Exercise12 {
         Employee min = (Employee) Collections.min(elements, comp);
         result.add((T) max);
         result.add((T) min);
-
         System.out.println(result.get(0).toString());
         System.out.println(result.get(1).toString());
     }
