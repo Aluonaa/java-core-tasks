@@ -1,7 +1,8 @@
 package com.digdes.crp.javacoretasks.chapter8;
 
 import java.math.BigInteger;
-import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Exercise15 {
@@ -12,12 +13,19 @@ public class Exercise15 {
 
     public static void main(String[] args) {
 
-        BigInteger[] bigs = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE)).limit(800).toArray(BigInteger[]::new);
+        List<BigInteger> bigs = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE)).limit(3600).collect(Collectors.toList());
 
-        BigInteger[] bigIntegerFilter = Arrays.stream(bigs).filter(p -> p.isProbablePrime(50)).limit(50).toArray(BigInteger[]::new);
-        for(int i = 0; i < bigIntegerFilter.length; i++){
-            System.out.println(bigIntegerFilter[i] + " - " + i);
+        long startSerialStream = System.currentTimeMillis();
+        BigInteger[] bigIntegerStream = bigs.stream().filter(p -> p.isProbablePrime(50)).limit(500).toArray(BigInteger[]::new);
+        long endSerialStream = System.currentTimeMillis();
+        long startParallelStream = System.currentTimeMillis();
+        BigInteger[] bigIntegerParallelStream = bigs.parallelStream().filter(p -> p.isProbablePrime(50)).limit(500).toArray(BigInteger[]::new);
+        long endParallelStream = System.currentTimeMillis();
+        for(int i = 0; i < bigIntegerStream.length; i++){
+            System.out.println(bigIntegerStream[i] + " - " + i);
         }
+        System.out.println("Время работы параллельного потока: " + (endParallelStream-startParallelStream));
+        System.out.println("Время работы обычного потока: " + (endSerialStream-startSerialStream));
     }
 
 

@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Exercise16 {
     /** Найдите 500 самых длинных слов в романе "Война и мир", используя параллельный поток данных.
@@ -18,22 +17,22 @@ public class Exercise16 {
 
         List<String> listOfWords = Arrays.asList(content.split("\\PL+"));
 
-
-        /** параллельный поток **/
-//        long startStreamOfWordsParallel = System.currentTimeMillis();
-//        Stream<String> streamOfWordsParallel = listOfWords.parallelStream().sorted(Comparator.comparing(String::length).reversed()).limit(500);
-//        long endStreamOfWordsParallel = System.currentTimeMillis();
-
         /** последовательный поток **/
         long startStreamOfWords = System.currentTimeMillis();
-        Stream<String> streamOfWords = listOfWords.stream().sorted(Comparator.comparing(String::length).reversed()).limit(500);
+        List<String> streamOfWords = listOfWords.stream().sorted(Comparator.comparing(String::length)
+                .reversed()).limit(500).collect(Collectors.toList());
         long endStreamOfWords = System.currentTimeMillis();
 
-        List<String> sortedListOfWords = streamOfWords.collect(Collectors.toList());
+        /** параллельный поток **/
+        long startStreamOfWordsParallel = System.currentTimeMillis();
+        List<String> streamOfWordsParallel = listOfWords.parallelStream().sorted(Comparator.comparing(String::length)
+                .reversed()).limit(500).collect(Collectors.toList());
+        long endStreamOfWordsParallel = System.currentTimeMillis();
 
-        System.out.println(sortedListOfWords);
-//        System.out.println(endStreamOfWordsParallel-startStreamOfWordsParallel);
-        System.out.println(endStreamOfWords-startStreamOfWords);
+
+        System.out.println(streamOfWords);
+        System.out.println("Время работы параллельного потока: " + (endStreamOfWordsParallel-startStreamOfWordsParallel));
+        System.out.println("Время работы обычного потока: " + (endStreamOfWords-startStreamOfWords));
 
     }
 }

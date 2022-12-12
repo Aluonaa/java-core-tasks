@@ -24,11 +24,13 @@ public class Exercise17 {
         listForParallel.add("anna");
         listForParallel.add("anna");
         listForParallel.add("anna");
+        listForParallel.add("anna");
+        listForParallel.add("anna");
+        listForParallel.add("anna");
+        listForParallel.add("anna");
+        listForParallel.add("anna");
         listForParallel.add("gently");
-                Stream<String> uniqueWordsParallel = listForParallel.parallelStream().distinct();
-                List<String> listParallel = uniqueWordsParallel.collect(Collectors.toList());
-        System.out.println(listParallel);
-
+        List<String> uniqueWordsParallel = listForParallel.parallelStream().distinct().collect(Collectors.toList());
+        System.out.println(uniqueWordsParallel);
     }
-
 }

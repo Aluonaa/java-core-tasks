@@ -20,8 +20,6 @@ public class Exercise7 {
                 Files.lines(Paths.get("src/main/resources/textFiles/7.7.txt"))
                         .collect(Collectors.joining("\n"));
         String[] listOfWords = text.split(" ");
-        for(int i = 0; i<listOfWords.length; i++){
-        }
         int i = 0;
         HashMap<String, Integer> wordsWithFrequencyOfUse = new HashMap<>();
         for(String currentWord: listOfWords){

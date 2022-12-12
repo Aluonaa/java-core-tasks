@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class Exercise2 {
-
    /** Определите разность во времени подсчета длинных слов с помощью методов
     parallelStream() и stream(). Вызовите метод System.current TimeMillis()
     до и после этих методов и выведите разность **/
@@ -17,7 +16,6 @@ public class Exercise2 {
         String content = new String(Files.readAllBytes(Paths.get(
                 "src/main/resources/textFiles/8.1.txt")), StandardCharsets.UTF_8);
 
-        /** разделитель - все небуквенные символы **/
         List<String> listOfWords = Arrays.asList(content.split("\\PL+"));
 
         long startCountWithStreamMethod = System.currentTimeMillis();

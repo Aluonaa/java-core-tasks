@@ -1,8 +1,7 @@
 package com.digdes.crp.javacoretasks.chapter8;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Exercise14 {
     /** Организуйте вызов метода reduce() таким образом, чтобы вычислить среднее
@@ -10,17 +9,12 @@ public class Exercise14 {
      **/
 
     public static void main(String[] args) {
-        List<Double> values = new ArrayList<>();
-        values.add(3.5);
-        values.add(18.6);
-        values.add(14.9);
-        values.add(37.2);
-        values.add(32.44);
-        values.add(97.87);
-        Optional<Double> sum = values.stream().reduce(Double::sum);
+        Double[] doubles = new Double[]{3.5, 18.4, 45.3456, 76.57, 114.6};
+        Stream<Double> doubleStream = Stream.of(doubles);
+        Optional<Double> sum = doubleStream.reduce(Double::sum);
         if(sum.isPresent()){
             System.out.println(sum.get());
-            double result = sum.get() / values.size();
+            double result = sum.get() / doubles.length;
             System.out.println(result);
         }
     }
