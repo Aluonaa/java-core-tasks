@@ -12,7 +12,8 @@ public class Exercise7 {
 
     public static void main(String[] args) {
         List<String> months = Arrays.stream(Locale.getAvailableLocales()).map(currentLocale ->
-                        Month.of(12).getDisplayName(TextStyle.FULL_STANDALONE, currentLocale)).distinct().collect(Collectors.toList());
+                        Month.of(12).getDisplayName(TextStyle.FULL_STANDALONE, currentLocale))
+                .distinct().collect(Collectors.toList());
         System.out.println(months);
         }
 

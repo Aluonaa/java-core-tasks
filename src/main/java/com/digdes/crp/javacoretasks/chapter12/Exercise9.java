@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Exercise9 {
-
     /** Используя снова потоковые операции, выявите все часовые пояса, смещения
     которых не кратны полному часу. **/
 

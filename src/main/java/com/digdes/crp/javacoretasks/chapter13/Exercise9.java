@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter13;
 
-import java.awt.*;
 import java.text.MessageFormat;
 import java.util.Currency;
 import java.util.Locale;

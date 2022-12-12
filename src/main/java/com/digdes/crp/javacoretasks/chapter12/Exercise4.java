@@ -6,12 +6,13 @@ import java.util.GregorianCalendar;
 
 
 public class Exercise4 {
+    /** Напишите программу, выполняющую такие же функции, как и команда cal
+    в Unix, выводящая календарь на текущий месяц. **/
 
     public static void main(String[] args) {
         displayConsoleCalendar(Calendar.JANUARY, 2023);
     }
     public static void displayConsoleCalendar(int month, int year) {
-        boolean useColor = true;
         String red = "\033[0;31m";
         String blue = "\033[0;34m";
         String reset = "\033[0m";
@@ -23,9 +24,9 @@ public class Exercise4 {
         System.out.println(new SimpleDateFormat("MMMM YYYY").format(calendar.getTime()));
         System.out.println(blue + " S  M  T  W  T  F  S" + reset);
 
-        String initialSpace = "";
+        StringBuilder initialSpace = new StringBuilder();
         for (int i = 0; i < dayOfWeek - 1; i++) {
-            initialSpace += "   ";
+            initialSpace.append("   ");
         }
         System.out.print(initialSpace);
 
