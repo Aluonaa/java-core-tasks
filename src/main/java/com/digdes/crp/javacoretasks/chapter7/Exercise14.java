@@ -1,8 +1,9 @@
 package com.digdes.crp.javacoretasks.chapter7;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Exercise14 {
    /** Напишите метод для получения неизменяемого представления списка чисел
@@ -12,10 +13,6 @@ public class Exercise14 {
     }
 
     public static List<Integer> getUnmodifiableList(int n) {
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            list.add(i);
-        }
-        return Collections.unmodifiableList(list);
+        return Collections.unmodifiableList(IntStream.range(0, n).boxed().collect(Collectors.toList()));
     }
 }

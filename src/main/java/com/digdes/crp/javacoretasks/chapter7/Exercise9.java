@@ -48,7 +48,7 @@ public class Exercise9 {
     }
 
     public static void getAndNullMethod(HashMap<String, Integer> wordsWithFrequencyOfUse, String currentWord){
-        if(wordsWithFrequencyOfUse.get(currentWord) == null){
+        if(wordsWithFrequencyOfUse.get(currentWord) == null){ //тут так нужно по заданию
             wordsWithFrequencyOfUse.put(currentWord, 1);
         }
         else wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
@@ -65,5 +65,3 @@ public class Exercise9 {
         else wordsWithFrequencyOfUse.put(currentWord, wordsWithFrequencyOfUse.get(currentWord) + 1);
     }
 }
-
-//wordsWithFrequencyOfUse.compute(currentWord, (k, v) -> v == null ? 1 : v + 1);

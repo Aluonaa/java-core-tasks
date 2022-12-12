@@ -1,9 +1,6 @@
 package com.digdes.crp.javacoretasks.chapter7;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Exercise2 {
    /** 2. Сделайте все буквы прописными в символьных строках, содержащихся в массиве.
@@ -11,10 +8,10 @@ public class Exercise2 {
     в цикле и, наконец, методом replaceAll (). **/
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
         List<String> listString = new ArrayList<>();
-        System.out.println("Задание 7.2. Введите строку");
-        listString.add(scanner.next());
+        listString.add("Dsffdh");
+        listString.add("gjnyuthrg");
+        listString.add("ghjhjhj");
 
         // Метод 1. Итератор
         ListIterator<String> iterator = listString.listIterator();

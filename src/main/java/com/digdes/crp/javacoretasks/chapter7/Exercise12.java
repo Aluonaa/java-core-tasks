@@ -1,7 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter7;
 
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Exercise12 {
@@ -11,19 +9,14 @@ public class Exercise12 {
     конце предложения. Подсказка: не перетасовывайте при этом слова  **/
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(Paths.get("C:\\Users\\Strelets.A\\Desktop\\qwe.txt"));
-//        List<String> stringList = new ArrayList<>();
-//        while(scanner.hasNext())
-//        {
-//            String s = scanner.next();
-//            stringList.add(s);
-//        }
-//        if( == "."){
-//            stringList.remove(stringList.size()-1);
-//        }
-//        stringList.set(0, stringList.get(0).toLowerCase());
-//        Collections.shuffle(stringList.subList(1, stringList.size()-1));
-//        stringList.set(0, stringList.get(0).toLowerCase());
-//        System.out.println(stringList);
+        String words = "Напишите. Программу. Для. Чтения. Предложения. В. Списочный. Массив.";
+        List<String> arrayList = Arrays.asList(words.split(" "));
+        arrayList.set(0, arrayList.get(0).toLowerCase());
+        arrayList.set(arrayList.size()-1, arrayList.get(arrayList.size()-1).replaceAll("\\.(?!.*\\.)",""));
+        Collections.shuffle(arrayList);
+        arrayList.set(0, arrayList.get(0).toLowerCase());
+        arrayList.set(arrayList.size()-1, arrayList.get(arrayList.size()-1).replaceAll("\\.(?!.*\\.)",""));
+
+        System.out.println(arrayList);
     }
 }

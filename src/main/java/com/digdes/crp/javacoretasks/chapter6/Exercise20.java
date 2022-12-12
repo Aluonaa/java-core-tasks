@@ -14,16 +14,21 @@ public class Exercise20 {
         Integer integer1 = 4;
         Integer integer2 = 7;
         Integer integer3 = 9;
-        System.out.println(Arrays.toString(repeat(10, integer1, integer2, integer3)));
-
+        Object[] mass = repeat(1, integer1, integer2, integer3);
+        for(Object o: mass) {
+            System.out.println(o.toString());
+        }
     }
 
     @SafeVarargs
     public static <T> T[] repeat(int n, T... objs){
-        T[] t = (T[]) Array.newInstance(objs.getClass(), n);
+        @SuppressWarnings("unchecked")
+        T[] t = (T[]) Array.newInstance(objs.getClass(), n*objs.length);
         int length = Array.getLength(t);
-        for (int i=0; i<length; i++)
+        int j = 0;
+        for (int i=0; i<n; i++) {
             Array.set(t, i, objs);
+        }
         return t;
     }
 }
