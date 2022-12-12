@@ -1,12 +1,7 @@
 package com.digdes.crp.javacoretasks.chapter9;
 
-/** 4.1 **/
-/** 4.2 **/
-
 import java.io.Serializable;
 import java.util.Objects;
-
-/** 4.3 **/
 
     public class Point implements Serializable {
 

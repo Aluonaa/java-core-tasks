@@ -23,11 +23,12 @@ public class Exercise2 {
             while(scanner1.hasNext())
             {
                 String currentLine = scanner1.nextLine();
-                String[] massOfWords = currentLine.split(" ");
+                String[] massOfWords = currentLine.split("\\PL+");
                 uniqueStringsOfFile.addAll(Arrays.asList(massOfWords));
             }
 
-            int i = 0;
+            System.out.println(uniqueStringsOfFile);
+            int i = 1;
 
             while(scanner2.hasNext())
             {
@@ -43,12 +44,15 @@ public class Exercise2 {
             io.printStackTrace();
         }
 
-        try(FileWriter fileWriter = new FileWriter("src/main/resources/textFiles/9.2.out.toe")) {
+        System.out.println(stringWithAllWords);
+
+        try(FileWriter fileWriter = new FileWriter("src/main/resources/textFiles/9.2.toe")) {
             for (String s : uniqueStringsOfFile) {
                 fileWriter.write(s);
+                fileWriter.write(" ");
             }
             for (Integer integer : stringWithAllWords) {
-                fileWriter.write(integer);
+                fileWriter.write(integer.toString());
             }
         }
         catch (IOException io){

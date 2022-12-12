@@ -3,9 +3,7 @@ package com.digdes.crp.javacoretasks.chapter9;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -25,18 +23,10 @@ public class Exercise8 {
             assert files != null;
                 byte[] data = Arrays.toString(files).getBytes();
                 out.write(data, 0, data.length);
-
             out.closeEntry();
-
-        } catch (IOException fileNotFoundException) {
-            fileNotFoundException.printStackTrace();
+        } catch (IOException io) {
+            io.printStackTrace();
         }
-
-        List<String> list = new ArrayList<>();
-        list.add("Hello");
-        ArrayList<String> arrayList = new ArrayList<>();
-        list.add("Hello");
-
     }
 
 }
