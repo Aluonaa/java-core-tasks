@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter10;
 
-
 import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.concurrent.*;
@@ -20,12 +19,10 @@ public class Exercise3 {
             String word = null;
             try(Scanner scanner = new Scanner(Paths.get("src/main/resources/textFiles/voyna-i-mir-tom-1.txt"))) {
                 while (scanner.hasNext()) {
-                    while (word == null) {
-                        if (Thread.currentThread().isInterrupted()) return null;
-                        if(scanner.next().equals("сказал")){
-                            word = "сказал";
-                            return word;
-                        }
+                    if (Thread.currentThread().isInterrupted()) return "Выполнение прервано";
+                    if(scanner.next().equals("сказал")){
+                        word = "сказал";
+                        return word;
                     }
                 }
             }

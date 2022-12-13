@@ -30,14 +30,13 @@ public class Exercise8 {
             for(int i =0; i<100000; i++) {
                 count.increment();
             }
-            System.out.println(count);
         });
-        long endAtomicAdder = System.currentTimeMillis();
+        long endLongAdder = System.currentTimeMillis();
         executorServiceAtomicLong.shutdown();
         executorServiceLongAdder.shutdown();
 
-        System.out.println(endAtomicLong - startAtomicLong);
-        System.out.println(endAtomicAdder - startLongAdder);
+        System.out.println("AtomicLong: " + (endAtomicLong - startAtomicLong));
+        System.out.println("LongAdder: " + (endLongAdder - startLongAdder));
 
     }
 

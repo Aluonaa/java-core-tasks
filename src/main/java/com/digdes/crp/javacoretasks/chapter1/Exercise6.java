@@ -1,7 +1,6 @@
 package com.digdes.crp.javacoretasks.chapter1;
 
 import java.math.BigInteger;
-import java.util.Scanner;
 
 public class Exercise6 {
     /** Напишите программу, вычисляющую факториал

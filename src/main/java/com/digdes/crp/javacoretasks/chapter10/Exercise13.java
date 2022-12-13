@@ -20,7 +20,7 @@ public class Exercise13 {
         for (File f: Objects.requireNonNull(folder.listFiles())) tasks.add(
                 () -> {
                     HashMap<String, Integer> wordsWithFrequencyOfUse = new HashMap<>();
-                    try(Scanner scanner1 = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
+                    try(Scanner scanner1 = new Scanner(f))
                     {
                         while(scanner1.hasNext())
                         {
@@ -42,6 +42,7 @@ public class Exercise13 {
         for (Callable<HashMap<String, Integer>> task : tasks) executorCompletionService.submit(task);
 
         HashMap<String, Integer> allWords = new HashMap<>();
+
         for (int i = 0; i < tasks.size(); i++) {
             HashMap<String, Integer> currentHashMap = executorCompletionService.take().get();
             currentHashMap.forEach((key, value) ->

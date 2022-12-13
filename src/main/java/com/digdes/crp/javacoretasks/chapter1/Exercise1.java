@@ -11,8 +11,8 @@ public class Exercise1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println(" Введите целое число:");
         int number = scanner.nextInt();
-        System.out.println("Двоичная система: " + Integer.toBinaryString(number) + "\n" +
-                           "Восьмеричная система: " + Integer.toOctalString(number) + "\n" +
-                           "Шестнадцатеричная система: " + Integer.toHexString(number));
+        System.out.println("Двоичная форма: " + Integer.toBinaryString(number) + "\n" +
+                           "Восьмеричная форма: " + Integer.toOctalString(number) + "\n" +
+                           "Шестнадцатеричная форма: " + Integer.toHexString(number));
     }
 }

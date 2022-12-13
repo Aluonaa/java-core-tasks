@@ -21,7 +21,7 @@ public class Exercise17 {
             long countForThread = 0;
             for (File f: Objects.requireNonNull(folder.listFiles())){
                 Lock lock = new ReentrantLock();
-                try (Scanner scanner = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath()))))) {
+                try (Scanner scanner = new Scanner(f)) {
                     while (scanner.hasNextLine()) {
                         String currentLine = scanner.nextLine();
                         String[] massOfWords = currentLine.split(" ");

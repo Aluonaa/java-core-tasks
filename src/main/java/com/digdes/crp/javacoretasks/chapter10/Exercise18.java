@@ -2,7 +2,6 @@ package com.digdes.crp.javacoretasks.chapter10;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.*;
@@ -12,14 +11,14 @@ public class Exercise18 {
     /** Усовершенствуйте программу из предыдущего упражнения, используя класс
     LongAdder. **/
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         final File folder = new File("src/main/resources/textFiles/10.11");
 
         Callable<LongAdder> task = () -> {
             LongAdder countForThread = new LongAdder();
             for (File f: Objects.requireNonNull(folder.listFiles())){
-                try (Scanner scanner = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath()))))) {
+                try (Scanner scanner = new Scanner(f)) {
                     while (scanner.hasNextLine()) {
                         String currentLine = scanner.nextLine();
                         String[] massOfWords = currentLine.split(" ");

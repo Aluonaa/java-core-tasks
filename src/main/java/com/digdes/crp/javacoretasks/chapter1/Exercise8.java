@@ -8,9 +8,9 @@ public class Exercise8 {
     public static void main(String[] args) {
         System.out.println("Введите символьную строку: ");
         Scanner scanner = new Scanner(System.in);
-        String stroka = scanner.nextLine();
-        String[] words = stroka.replaceAll("[\\s]{2,}", " ").split(" ");
-        for (String word : words) {
+        String stringWithEmptySubstrings = scanner.nextLine();
+        String[] nonEmptySubstrings = stringWithEmptySubstrings.replaceAll("[\\s]{2,}", " ").split(" ");
+        for (String word : nonEmptySubstrings) {
             System.out.println(word);
         }
     }

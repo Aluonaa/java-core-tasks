@@ -2,7 +2,6 @@ package com.digdes.crp.javacoretasks.chapter10;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -18,7 +17,7 @@ public class Exercise14 {
         ConcurrentHashMap<String, Integer> wordsWithFrequencyOfUse = new ConcurrentHashMap<>();
         Callable<ConcurrentHashMap<String, Integer>> task = () -> {
                     for (File f: Objects.requireNonNull(folder.listFiles())) {
-                    try(Scanner scanner1 = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
+                    try(Scanner scanner1 = new Scanner(f))
                     {
                         while(scanner1.hasNext())
                         {

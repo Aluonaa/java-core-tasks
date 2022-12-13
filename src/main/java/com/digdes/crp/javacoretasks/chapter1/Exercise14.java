@@ -22,7 +22,7 @@ public class Exercise14 {
     }
 
     public static boolean magicSquareCheck(){
-
+        System.out.println("Введите двумерный массив: ");
         Scanner scanner = new Scanner(System.in);
         String input;
         List<String> stringListOfNumbersFromInput = new ArrayList<>();

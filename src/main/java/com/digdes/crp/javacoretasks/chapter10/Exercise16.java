@@ -31,7 +31,7 @@ public class Exercise16 {
         for (File f: Objects.requireNonNull(folder.listFiles())) tasks.add(
                 () -> {
                     long countForThread = 0;
-                    try(Scanner scanner = new Scanner(Paths.get(String.valueOf(Paths.get(f.getPath())))))
+                    try(Scanner scanner = new Scanner(f))
                     {
                         while(scanner.hasNextLine())
                         {
