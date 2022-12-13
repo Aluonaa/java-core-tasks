@@ -1,6 +1,5 @@
 package com.digdes.crp.javacoretasks.chapter5;
 
-
 import java.util.Arrays;
 import java.util.Random;
 

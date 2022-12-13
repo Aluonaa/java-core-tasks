@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Exercise13 {
+    /** 13. Реализуйте и испытайте фильтр протокольных записей,
+     * содержащий такие неприличные слова, как секс, наркотики и C++. **/
 
     private static final Logger LOGGER = initFilteredLogger();
 

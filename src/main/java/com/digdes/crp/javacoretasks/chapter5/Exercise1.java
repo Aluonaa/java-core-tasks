@@ -13,18 +13,19 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         String filename = "src/main/resources/textFiles/5.1.txt";
-        System.out.println(readValues(filename).toString());
+        try {
+            System.out.println(readValues(filename));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 
-    public static ArrayList<Double> readValues(String filename) {
+    public static ArrayList<Double> readValues(String filename) throws IOException, NumberFormatException{
         ArrayList<Double> listDouble = new ArrayList<>();
         try(Scanner scanner = new Scanner(Paths.get(filename))){
             while(scanner.hasNext()){
                 listDouble.add(Double.parseDouble(scanner.next()));
             }
-        }
-        catch (IOException | NumberFormatException io){
-            io.printStackTrace();
         }
         return listDouble;
     }
